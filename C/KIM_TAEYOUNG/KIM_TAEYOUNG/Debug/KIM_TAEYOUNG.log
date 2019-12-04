@@ -1,3 +1,6 @@
 ﻿  KIM_TAEYOUNG.c
-MSVCRTD.lib(exe_main.obj) : error LNK2019: _main 외부 기호(참조 위치: "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ) 함수)에서 확인하지 못했습니다.
-C:\Git_project\KTY\C\KIM_TAEYOUNG\Debug\KIM_TAEYOUNG.exe : fatal error LNK1120: 1개의 확인할 수 없는 외부 참조입니다.
+c:\git_project\kty\c\kim_taeyoung\kim_taeyoung\kim_taeyoung.c(12): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 'scanf' 선언을 참조하십시오.
+c:\git_project\kty\c\kim_taeyoung\kim_taeyoung\kim_taeyoung.c(14): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 'scanf' 선언을 참조하십시오.
+  KIM_TAEYOUNG.vcxproj -> C:\Git_project\KTY\C\KIM_TAEYOUNG\Debug\KIM_TAEYOUNG.exe
