@@ -407,7 +407,7 @@ int main()
 		else if (my == 3)
 		{
 			printf("당신은 보를 냈습니다.\n");
-		}		
+		}
 		if (com == 1)
 		{
 			printf("컴퓨터는 가위를 냈습니다.\n");
@@ -433,7 +433,7 @@ int main()
 		{
 			printf("컴퓨터가 이겼습니다.ㅠ.ㅠ\n\n");
 		}
-	}	
+	}
 	return 0;
 }
 */

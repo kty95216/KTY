@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{20DD58E1-CAAB-4FA3-8F8A-3C1C843255AE}</ProjectGuid>
+    <ProjectGuid>{0CF981DA-25BF-4C2A-A44E-7F1A2E0D1461}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>KIMTAEYOUNG</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
