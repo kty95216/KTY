@@ -1,0 +1,247 @@
+JAVA (Day 05)
+
+■ 배열(array) : 같은 타입의 변수들의 모임 , 배열은 변수들을 모아놓은 것 , 배열은 하나의 이름을 공유한다.
+● 배열 참조 변수 선언 : 데이터타입[] 배열이름(참조변수: = 주소값을 가지고있는(담는) 변수);
+● 배열을 new 연산자를 사용하여 생성 : 배열이름(참조변수: = 주소값을 가지고있는(담는) 변수) = new 데이터타입[변수개수];	,JAVA에서 new연산자로 생성이되면 무조건!!! Heap Area에 생성 , 배열을 찾아갈 수 있는 주소에 대한 정보(주소값)(주소값은 16진수)는 Stack Area에 생성
+● JAVA에서 가장 빠르고 정확하고 쉽게만들 수 있는 자료구조. 가장 많이 쓰는 자료구조
+☞ 입력)	public class ArrayTest 
+	{
+		public static void main(String[] args) 
+		{
+	//		int s1;
+	//		int s2;
+	//		int s3;
+	//		int s4;
+	//		int s5;
+	////		......
+	//		int s29;
+			[29개의 정수변수가 필요한 상황.]
+			
+			int[] s = new int[29];
+			s[0] = 100;	[이렇게 배열을 생성하면 이 이름의 29칸의 정수공간을 사용가능]
+			s[1] = 100;
+			s[3] = 100;
+			[정수변수 29개를 한번에 생성하는 배열 코드]
+			[배열 : 같은 타입의 변수들의 집합.]
+		}
+	}
+
+☞ 입력)	import java.util.Scanner;
+	
+	public class ArrayTest2 
+	{
+		public static void main(String[] args) 
+		{
+			int[] salary = new int[2];
+			Scanner scan = new Scanner(System.in);
+			System.out.print("직원1의 월급을 입력하시오 : ");
+			salary[0] = scan.nextInt();
+			System.out.print("직원2의 월급을 입력하시오 : ");
+			salary[1] = scan.nextInt();
+			System.out.println("직원1의 월급은 " + salary[0]);
+			System.out.println("직원2의 월급은 " + salary[0]);
+		}
+	}
+☞ 출력)	직원1의 월급을 입력하시오 : 100
+	직원2의 월급을 입력하시오 : 200
+	직원1의 월급은 100
+	직원2의 월급은 100
+
+● 또 다른 배열 선언 방식 : 데이터타입[] 배열이름; (JAVA방식) , 데이터타입 배열이름[]; (C언어 유사 방식)
+
+☞ 입력)	public class ArrayTest3 
+	{
+		public static void main(String[] args) 
+		{
+			double[] darray = {1.2, 3.1, 6.7};	[배열 선언과 동시에 초기화 하는방법]
+			
+			double[] array = new double[3];
+			
+			array[0] = 1.2;
+			array[1] = 3.1;
+			array[2] = 6.7;
+			
+			System.out.println(array[0]);
+			System.out.println(array[1]);
+			System.out.println(array[2]);
+			System.out.println(darray[0]);
+			System.out.println(darray[1]);
+			System.out.println(darray[2]);
+		}
+	}
+☞ 출력)	1.2
+	3.1
+	6.7
+	1.2
+	3.1
+	6.7
+
+♨ 예시 코딩 문제 : 사용자로부터 학생의 수를 입력받아서 , 학생 수 만큼 각각 학생의 성적을 입력해서 전체 학생의 평균점수를 구하는 프로그램을 작성해보세요. ex) 학생 수를 입력하세요 : --> 3입력하면 --> 총 3번의 점수를 입력하고 --> 3번 입력이 끝나면 --> 3명의 평균점수를 출력
+☞ 입력)	import java.util.Scanner;
+	
+	public class ArrayTest4 
+	{
+		public static void main(String[] args) 
+		{
+			Scanner scan = new Scanner(System.in);
+			int student = 0;
+			double total = 0;
+			double avg = 0;
+			
+			System.out.print("학생 수를 입력하세요 : ");
+			student = scan.nextInt();
+			
+			double[] studentnumber = new double[student];
+			
+			for(int i=0 ; i < student ; i++)
+			{
+				System.out.print("학생" + (i+1) + "의  점수 입력 : ");
+				studentnumber[i] = scan.nextDouble();
+				total += studentnumber[i];
+			}
+			
+			avg = total / student;
+			System.out.println(student + "명의 평균점수 : " + avg);
+		}
+	}
+☞ 출력)	학생 수를 입력하세요 : 3
+	학생1의  점수 입력 : 33
+	학생2의  점수 입력 : 55
+	학생3의  점수 입력 : 22
+	3명의 평균점수 : 36.666666666666664
+
+● 배열의 크기 : 배열의이름.length --> 배열의 사이즈
+● for-each 루프 : 반드시 배열의 0번 index 부터 배열의 length 까지 반복할 때 사용
+● for-each 루프 형태 :	for(데이터타입 변수 : 배열이름)
+			{
+				문장;
+			}
+
+☞ 입력)	public class ArrayTest5
+	{
+		public static void main(String[] args) 
+		{
+			int[] numbers = new int[5];
+			for(int i = 0; i<numbers.length; i++)
+			{
+				numbers[i] = (int) (Math.random()*1000);
+			}
+			for (int value : numbers)	[numbers[0]의 값을 value 변수에 저장 -> value값 출력 -> numbers[1]의 값을 value 변수에 저장(numbers[0]의 값은 사라짐) -> value값 출력 -> ... numbers[length]까지의 값을 value 변수에 저장 -> value값 출력 -> 마지막으로 for-each루프를 빠져나오면 value변수는 사라짐
+			{
+				System.out.println(value);
+			}
+		}
+	}
+☞ 출력)	208
+	614
+	440
+	719
+	109
+
+♨ 예시 코딩 문제 : 6칸짜리 배열을 만들고 중복되지 않는 로또번호 6개를 배열에 각각 담아서 쪼르르 출력해보세요. (로또 : 1~45 까지의 숫자로 이루어짐, 이중 중복되는 수는 없고 6개를 생성하면 됨, 생성된 1 ~ 45까지의 숫자를 6칸짜리 배열에 하나씩 담으면 됨.)
+☞ 입력)	public class ArrayTest6 
+	{
+		public static void main(String[] args) 
+		{
+			int[] lucky = new int[6];
+			
+			for(int i = 0; i < lucky.length; i++)
+			{
+				lucky[i] = (int)(Math.random() * 45 + 1);
+				for(int j = 0; j < i; j++)	[중복제거를 위한 반복문]
+				{
+					if(lucky[i] == lucky[j])
+					{
+						i--;
+					}
+				}
+			}
+			for(int result : lucky)
+			{
+				System.out.print(result + " ");
+			}
+		}
+	}
+☞ 출력)	43 31 5 16 4 15
+
+● 구조체 : 서로 다른 타입의 변수들의 묶음 자료형(데이터타입) -> 사용자 정의 자료형(데이터타입)
+
+☞ 입력)	class student	[student라는 새로운 자료형(데이터타입) 만듬]
+	{
+		int age;
+		int score;
+		String name;
+	}
+	
+	public class StructTest 
+	{
+		public static void main(String[] args) 
+		{
+			[구조체 : 서로 다른 타입의 변수들의 묶음 자료형(데이터타입) -> 사용자 정의 자료형(데이터타입)]
+			
+			student s = new student();	[student타입의 데이터를 생성 (s에는 주소값이 담겨있다.)]
+			s.age = 10;
+			s.score = 100;
+			s.name = "학생1";
+			System.out.println(s);	[주소값 출력]
+			
+			System.out.println("나이 : " + s.age);
+			System.out.println("점수 : " + s.score);
+			System.out.println("이름 : " + s.name);
+			[학생한명을 더 만들어서, age, score, name에 각각 어떤 값들을 넣고, 그 값들을 출력해보세요]
+			student s2 = new student();
+			s2.age = 20;
+			s2.score = 90;
+			s2.name = "학생2";
+			
+			System.out.println("나이 : " + s2.age);
+			System.out.println("점수 : " + s2.score);
+			System.out.println("이름 : " + s2.name);
+		}
+	}
+☞ 출력)	student@15db9742			[주소값]
+	나이 : 10
+	점수 : 100
+	이름 : 학생1
+	나이 : 20
+	점수 : 90
+	이름 : 학생2
+
+● 함수(메소드) : 명령어들의 집합
+● 함수(메소드) 어느정도는 공통되는 코드가 있는데 약간씩 문장이 다른경우 : 변수를 만들어서 약간씩 다른문장을 넣어줌
+● 함수(메소드)의 괄호안에 있는 것을 : "매개변수"라고 한다.
+● 들어가는 값을 "인자값" , 인자값을 받아주는 것 , 인자값을 넣는 것을 "매개변수"
+
+☞ 입력)	public class StructTest2 
+	{
+		public static void 그림그리기명령어집합(String name)	[String name : 데이터타입 매개변수]
+		{
+			System.out.println("===============");
+			System.out.println("내가 그린 그림ㅋㅋㅋ" + name);
+			System.out.println("===============");
+			System.out.println("내가 그린 그림ㅋㅋㅋ" + name);
+			[함수(메소드) : 나중에 다시 사용될 가능성이 높은 코드들에다가 이름을 지어주면 재활용하기 좋음]
+		}
+		public static void main(String[] args) 
+		{
+			그림그리기명령어집합("구민상");		["구민상" : 인자값]
+			System.out.println("구구단");
+			그림그리기명령어집합("팔민상");		["팔민상" : 인자값]
+			System.out.println("로또");
+			그림그리기명령어집합("칠민상");		["칠민상" : 인자값]
+		}
+	}
+☞ 출력)	===============
+	내가 그린 그림ㅋㅋㅋ구민상
+	===============
+	내가 그린 그림ㅋㅋㅋ구민상
+	구구단
+	===============
+	내가 그린 그림ㅋㅋㅋ팔민상
+	===============
+	내가 그린 그림ㅋㅋㅋ팔민상
+	로또
+	===============
+	내가 그린 그림ㅋㅋㅋ칠민상
+	===============
+	내가 그린 그림ㅋㅋㅋ칠민상

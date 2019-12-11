@@ -1,0 +1,607 @@
+JAVA (Day 06)
+
+■ 객체지향 : 객체 지향 방법은 현실 세계를 모델링하는 것
+● 객체(Object) : 상태값(state)(객체의 특징값(속성))(변수(변수들의 집합=필드)에 담아놓는 값들-상태가 계속 변하기 때문에)과 동작값(behavior)(행동은 객체가 취할 수 있는 동작)(함수(메소드)에 담겨있는 것)을 가지고있음.
+● 물건을 실제화해서 프로그래밍화 시키면 반드시 상태값과 동작값을 구분할 수 있어야한다.
+● 자바에서만의 객체(다른 프로그래밍 언어에서는 해당X) : Heap영역에 할당되는 모든 데이터 (무조건 Heap만!!!)(new연산자를 이용해 만들어진 모든 데이터)(new연산자만!!! 메모리의 Heap영역에 넣기때문에)
+● 배열에서 new연산자를 사용하니까 배열도 객체이다.
+● C언어에서는 구조체 , JAVA에서는 클래스(calss)라고 이야기함(90%이상 기능,역할 똑같음)
+● 클래스(class) : 객체를 만드는 ★설계도★ , 관련있는 변수(필드)와 함수(메소드)를 조합해서 만든 자료형
+● 객체 : 클래스를 통해서 생성해낸 데이터
+● 인스턴스(instance) : 클래스(설계도)로부터 만들어지는 각각의 객체를 특별히 그 클래스의 인스턴스(instance)라고도 한다.
+● new연산자 : 클래스(설계도)를 보고 새로운 객체를 만드는 연산자
+● 객체화 , 인스턴스화 : 객체를 만드는 과정
+● 통상적으로는 객체랑 인스턴스는 같다고 보면됨(하지만 깊게 들어가면 다르긴 다름).
+● 객체지향을 사용하는 이유 : 1.소프트웨어 작성이 쉽다. 2.신뢰성있는 소프트웨어를 쉽게 작성할 수 있다. 3.코드를 재사용하기 쉽다. 4.업그레이드가 쉽다. 5.디버깅이 쉽다.
+
+☞ 입력)	public class Car 
+	{
+		[상태 : 속도, 색상, 주행거리]
+		int speed;
+		String color;
+		int mileage;
+		
+		[기능 : 가속, 감속, 현재상태 출력]
+		public void speedUp(int s)
+		{
+			speed += s;
+		}
+		public void speedDown(int s) 
+		{
+			speed -= s;
+		}
+		public void print()
+		{
+			System.out.println("현재속도 : " + speed);
+			System.out.println("색     상 : " + color);
+			System.out.println("주행거리 : " + mileage);
+		}
+	
+	}
+☞ 입력)	public class CarTest 
+	{
+		public static void main(String[] args) 
+		{[메인함수 : 하나의 프로젝트에서 키(key), 시작이 되는 부분]
+			Car abbacha = new Car(); [Car타입의 객체 abbacha생성]  [new연산자는 왼쪽 Car클래스(설계도)를 보고 객체를 만드는 연산자이다.]
+			Car ummacha = new Car(); [Car타입의 객체 ummacha생성]
+			
+			abbacha.speed = 100;
+			abbacha.color = "PINK";
+			abbacha.mileage = 30000;
+			
+			ummacha.speed = 200;
+			ummacha.color = "BLACK";
+			ummacha.mileage = 50000;
+			
+			abbacha.print();	[abbacha의 주소값을 참조해서 만들어놓은 객체(완성품)의 print()를 찾아가서 실행 절대로!!! 클래스(설계도)를 찾아가지 않음.]
+			System.out.println("==============");
+			ummacha.print();
+			
+			abbacha.speedUp(20);
+			abbacha.speedDown(40);
+			
+			System.out.println("==============");
+			abbacha.print();
+			System.out.println("==============");
+			ummacha.print();
+			
+		}
+	}
+☞ 출력)	현재속도 : 100
+	색     상 : PINK
+	주행거리 : 30000
+	==============
+	현재속도 : 200
+	색     상 : BLACK
+	주행거리 : 50000
+	==============
+	현재속도 : 80
+	색     상 : PINK
+	주행거리 : 30000
+	==============
+	현재속도 : 200
+	색     상 : BLACK
+	주행거리 : 50000
+
+● 컴파일에서는 분류, 손질, 수집을 해놓고, 런타임 때는 분류, 손질, 수집한 것을 가지고 만들어서 완성품이 나옴
+● new연산자는 반드신 런타임 때 만들어짐 --> stack 과 heap은 런타임 때만 만들어짐, 객체도 런타임 때만 만들어짐, 배열도 런타임 때만 만들어짐
+● String(문자열)은 컴파일 하는 중에 상수풀에 저장을 함
+● String x = "구민상"; --> String은 기초자료형이 아니고 객체이기 때문에 x에는 "구민상"이라는 자료가 들어가는게 아니고 "구민상"이 있는 상수풀의 주소를 가지고있음
+● ★★★String 에서의 기능 : equals(Object anObject) --> 주소값이 아니라 글자가 같은지 비교
+
+☞ 입력)	public class StringTest 
+	{
+		public static void main(String[] args) 
+		{
+			String x =new String("구민상");
+			String y =new String("구민상");
+			
+			if(x.equals(y))
+				System.out.println("같다!!!!");
+			else
+				System.out.println("다르다!!!");
+		}
+	}
+☞ 출력)	같다!!!!
+
+● class 안에 있는 변수는 전역변수(글로벌변수)(멤버변수) , 함수(메소드)안에 있는 변수 지역변수(로컬변수)
+● 전역변수(글로벌변수)(멤버변수)(필드)에는  수식어에는 public(공개) / private(비공개)을 줄 수 있음 --> public , private 를 나누는 이유 : 접근권한을 주기 위해서 , 접근권한을 하기 위해서
+● public은 default값이기 때문에 int x;라고 적으면 자동으로 public int x;이 됨
+● private를 앞에 적으면 클래스 간의 공유가 안됨 --> 하지만 정수값 하나를 매개변수로 받아서 멤버변수에 값을 넣어주는 메소드를 따로 만들어주면 된다.
+● ★★★★★★JAVA에서 함수(메소드)를 호출하고 함수(메소드)가 끝나면 , 반드시 호출했던 곳으로 다시 돌아온다.
+
+☞ 입력)	public class PrivateTest 
+	{
+		[상태 : 속도, 색상, 주행거리]
+		private int speed;
+		private String color;
+		private int mileage;
+			
+		[정수값 하나를 매개변수로 받아서 speed멤버변수에 값을 넣어주는 메소드]
+			
+		public void setSpeed(int s)	[void : 반환하는 데이터가 없음]
+		{
+			speed = s;
+		}
+			
+		[speed값을 갖다주는 메소드]
+			
+		public int[반환되는 데이터타임][반환유형] getSpeed()
+		{
+			return speed;	[반환유형이 void가 아니면 반드시 반환받는것이 적어도 한개는 있어야한다. 그래서 반환하는 명령어 return사용]
+		}
+			
+		[기능 : 가속, 감속, 현재상태 출력]
+		public void speedUp(int s)
+		{
+			speed += s;
+		}
+		public void speedDown(int s) 
+		{
+			speed -= s;
+		}
+		public void print()
+		{
+			System.out.println("현재속도 : " + speed);
+			System.out.println("색     상 : " + color);
+			System.out.println("주행거리 : " + mileage);
+		}
+	}
+☞ 입력)	public class PrivateTest2 
+	{
+		public static void main(String[] args) 
+		{[메인함수 : 하나의 프로젝트에서 키(key), 시작이 되는 부분]
+			PrivateTest abbacha = new PrivateTest(); [Car타입의 객체 abbacha생성]  [new연산자는 왼쪽 Car클래스(설계도)를 보고 객체를 만드는 연산자이다.]
+			PrivateTest ummacha = new PrivateTest(); [Car타입의 객체 ummacha생성]
+			
+			abbacha.setSpeed(100);
+			System.out.println(abbacha.getSpeed());
+			
+	//주석		abbacha.speed = 100;
+	//주석		abbacha.color = "PINK";
+	//주석		abbacha.mileage = 30000;
+	//주석		
+	//주석		ummacha.speed = 200;
+	//주석		ummacha.color = "BLACK";
+	//주석		ummacha.mileage = 50000;
+			
+			abbacha.print();	[abbacha의 주소값을 참조해서 만들어놓은 객체(완성품)의 print()를 찾아가서 실행 절대로!!! 클래스(설계도)를 찾아가지 않음.]
+			System.out.println("==============");
+			ummacha.print();
+			
+			abbacha.speedUp(20);
+			abbacha.speedDown(40);
+			
+			System.out.println("==============");
+			abbacha.print();
+			System.out.println("==============");
+			ummacha.print();
+			
+		}
+	}
+☞ 출력)	100
+	현재속도 : 100
+	색     상 : null
+	주행거리 : 0
+	==============
+	현재속도 : 0
+	색     상 : null
+	주행거리 : 0
+	==============
+	현재속도 : 80
+	색     상 : null
+	주행거리 : 0
+	==============
+	현재속도 : 0
+	색     상 : null
+	주행거리 : 0
+
+● getter/setter를 쓰는 이유 : 1.외부에서 남의 데이터를 직접 접근하는것을 막기위해서 2.세분화된 접근제어가 가능 (읽기, 쓰기, 읽고쓰기, 둘다안됨(비공개)) 3.입력값을 검증가능
+3.입력값을 검증가능의 예)
+
+☞ 입력)	public class PrivateTest 
+	{
+		[상태 : 속도, 색상, 주행거리]
+		private int speed;
+		private String color;
+		private int mileage;
+		
+		[정수값 하나를 매개변수로 받아서 speed멤버변수에 값을 넣어주는 메소드]
+			
+		public void setSpeed(int s)	[void : 반환하는 데이터가 없음]
+		{
+			if(s > 0 && s < 150)
+			{
+				speed = s;
+			}
+		}
+				
+		[speed값을 갖다주는 메소드]
+				
+		public int[반환되는 데이터타임][반환유형] getSpeed()
+		{
+			return speed;	[반환유형이 void가 아니면 반드시 반환받는것이 적어도 한개는 있어야한다. 그래서 반환하는 명령어 return사용]
+		}
+				
+		[기능 : 가속, 감속, 현재상태 출력]
+		public void speedUp(int s)
+		{
+			speed += s;
+		}
+		public void speedDown(int s) 
+		{
+			speed -= s;
+		}
+		public void print()
+		{
+			System.out.println("현재속도 : " + speed);
+			System.out.println("색     상 : " + color);
+			System.out.println("주행거리 : " + mileage);
+		}
+	}
+
+● getter만드는 약속 : 1.수식어는 public , 2.반환유형은 내가 getter되고자 하는 변수의 타입 , 3.메소드명 get + 변수명(변수명의 첫글자를 대문자로) getSpeed, getColor, getMileage , 4.매개변수 없음
+● setter만드는 약속 : 1.수식어는 public , 2.반환유형 void , 3.매개변수 : 내가 setter가 되고자하는 변수와 같은 타입의 매개변수 한개 , 4.몸통{} : (내가 setter가 되고자 하는 변수) = 매개변수
+
+♨ 예시 코딩 문제 : 위의 약속대로 color , mileage의 getter 와 setter 만들어보세요
+☞ 입력)	public class PrivateTest 
+	{
+		[상태 : 속도, 색상, 주행거리]
+		private int speed;
+		private String color;
+		private int mileage;
+			
+		[정수값 하나를 매개변수로 받아서 speed멤버변수에 값을 넣어주는 메소드]
+			
+		public void setSpeed(int s)
+		{
+			speed = s;
+		}
+			
+		[speed값을 갖다주는 메소드]
+			
+		public int[반환유형] getSpeed()
+		{
+			return speed;	[반환유형이 void가 아니면 반드시 반환받는것이 적어도 한개는 있어야한다.그래서 반환하는 명령어 return사용]
+		}
+			
+		public int getMileage() 
+		{
+			return mileage;
+		}
+			
+		public String getColor()
+		{
+			return color;
+		}
+			
+		public void setMileage(int m)
+		{
+			mileage = m;
+		}
+			
+		public void setColor(String c)
+		{
+			color = c;
+		}
+			
+		[기능 : 가속, 감속, 현재상태 출력]
+		public void speedUp(int s)
+		{
+			speed += s;
+		}
+		public void speedDown(int s) 
+		{
+			speed -= s;
+		}
+		public void print()
+		{
+			System.out.println("현재속도 : " + speed);
+			System.out.println("색     상 : " + color);
+			System.out.println("주행거리 : " + mileage);
+		}
+	}
+☞ 입력)	public class PrivateTest2 
+	{
+		public static void main(String[] args) 
+		{[메인함수 : 하나의 프로젝트에서 키(key), 시작이 되는 부분]
+			PrivateTest abbacha = new PrivateTest(); [Car타입의 객체 abbacha생성]  [new연산자는 왼쪽 Car클래스(설계도)를 보고 객체를 만드는 연산자이다.]
+			PrivateTest ummacha = new PrivateTest(); [Car타입의 객체 ummacha생성]
+			
+			abbacha.setSpeed(100);
+			System.out.println(abbacha.getSpeed());
+			abbacha.setMileage(20000);
+			System.out.println(abbacha.getMileage());
+			abbacha.setColor("BLUE");
+			System.out.println(abbacha.getColor());
+			
+	//주석		abbacha.speed = 100;
+	//주석		abbacha.color = "PINK";
+	//주석		abbacha.mileage = 30000;
+	//주석		
+	//주석		ummacha.speed = 200;
+	//주석		ummacha.color = "BLACK";
+	//주석		ummacha.mileage = 50000;
+			
+			abbacha.print();	[abbacha의 주소값을 참조해서 만들어놓은 객체(완성품)의 print()를 찾아가서 실행 절대로!!! 클래스(설계도)를 찾아가지 않음.]
+			System.out.println("==============");
+			ummacha.print();
+			
+			abbacha.speedUp(20);
+			abbacha.speedDown(40);
+			
+			System.out.println("==============");
+			abbacha.print();
+			System.out.println("==============");
+			ummacha.print();
+			
+		}
+	}
+☞ 출력)	100
+	20000
+	BLUE
+	현재속도 : 100
+	색     상 : BLUE
+	주행거리 : 20000
+	==============
+	현재속도 : 0
+	색     상 : null
+	주행거리 : 0
+	==============
+	현재속도 : 80
+	색     상 : BLUE
+	주행거리 : 20000
+	==============
+	현재속도 : 0
+	색     상 : null
+	주행거리 : 0
+
+♨ 예시 코딩 문제 : private String rice , private String side1 , private String side2 , private String calory , private String soup , private int price 의 변수들의 getter와 setter를 만드시오.
+☞ 입력)	public class Restraunt 
+	{
+		private String rice;
+		private String side1;
+		private String side2;
+		private String calory;
+		private String soup;
+		private int price;
+		
+		public String getRice() 
+		{
+			return rice;
+		}
+		public void setRice(String rice) 
+		{
+			this[this.는 멤버변수를 뜻함].rice = rice;
+		}
+		public String getSide1()
+		{
+			return side1;
+		}
+		public void setSide1(String side1)
+		{
+			this.side1 = side1;
+		}
+		public String getSide2()
+		{
+			return side2;
+		}
+		public void setSide2(String side2)
+		{
+			this.side2 = side2;
+		}
+		public String getCalory()
+		{
+			return calory;
+		}
+		public void setCalory(String calory)
+		{
+			this.calory = calory;
+		}
+		public String getSoup()
+		{
+			return soup;
+		}
+		public void setSoup(String soup)
+		{
+			this.soup = soup;
+		}
+		public int getPrice()
+		{
+			return price;
+		}
+		public void setPrice(int price)
+		{
+			this.price = price;
+		}
+	}
+
+● print명령어수를 줄일 수 있도록 toString함수를 만드는 방법
+☞ 입력)	public class PrivateTest 
+	{
+		//상태 : 속도, 색상, 주행거리
+		private int speed;
+		private String color;
+		private int mileage;
+			
+		//정수값 하나를 매개변수로 받아서 speed멤버변수에 값을 넣어주는 메소드
+			
+		public void setSpeed(int s)
+		{
+			speed = s;
+		}
+			
+		//speed값을 갖다주는 메소드
+			
+		public int/*반환유형*/ getSpeed()
+		{
+			return speed;	//반환유형이 void가 아니면 반드시 반환받는것이 적어도 한개는 있어야한다.그래서 반환하는 명령어 return사용
+		}
+			
+		public int getMileage() 
+		{
+			return mileage;
+		}
+			
+		public String getColor()
+		{
+			return color;
+		}
+			
+		public void setMileage(int m)
+		{
+			mileage = m;
+		}
+			
+		public void setColor(String c)
+		{
+			color = c;
+		}
+			
+		//기능 : 가속, 감속, 현재상태 출력
+		public void speedUp(int s)
+		{
+			speed += s;
+		}
+		public void speedDown(int s) 
+		{
+			speed -= s;
+		}
+	//	public void print()
+	//	{
+	//		System.out.println("현재속도 : " + speed);
+	//		System.out.println("색     상 : " + color);
+	//		System.out.println("주행거리 : " + mileage);
+	//	}
+		public String toString()
+		{
+			return "현재속도 : " + speed +
+				"\n색    상 : " + color +
+				"\n주행거리 : " + mileage;
+		}
+	}
+☞ 입력)	public class PrivateTest2 
+	{
+		public static void main(String[] args) 
+		{//메인함수 : 하나의 프로젝트에서 키(key), 시작이 되는 부분
+			PrivateTest abbacha = new PrivateTest(); //Car타입의 객체 abbacha생성  //new연산자는 왼쪽 Car클래스(설계도)를 보고 객체를 만드는 연산자이다.
+			PrivateTest ummacha = new PrivateTest(); //Car타입의 객체 ummacha생성
+			
+			abbacha.setSpeed(100);
+			abbacha.setMileage(20000);
+			abbacha.setColor("빨강");
+			ummacha.setSpeed(200);
+			ummacha.setMileage(15000);
+			ummacha.setColor("파랑");
+	//		abbacha.setSpeed(100);
+	//		System.out.println(abbacha.getSpeed());
+	//		abbacha.setMileage(20000);
+	//		System.out.println(abbacha.getMileage());
+	//		abbacha.setColor("BLUE");
+	//		System.out.println(abbacha.getColor());
+	//		
+	//		abbacha.speed = 100;
+	//		abbacha.color = "PINK";
+	//		abbacha.mileage = 30000;
+	//		
+	//		ummacha.speed = 200;
+	//		ummacha.color = "BLACK";
+	//		ummacha.mileage = 50000;
+			
+	//		abbacha.print();	//abbacha의 주소값을 참조해서 만들어놓은 객체(완성품)의 print()를 찾아가서 실행 절대로!!! 클래스(설계도)를 찾아가지 않음.
+	//		System.out.println("==============");
+	//		ummacha.print();
+			
+			abbacha.speedUp(20);
+			abbacha.speedDown(40);
+			
+	//		System.out.println("==============");
+	//		abbacha.print();
+	//		System.out.println("==============");
+	//		ummacha.print();
+			
+	
+			System.out.println(abbacha.toString());
+			System.out.println("==============");
+			System.out.println(ummacha.toString());
+		}
+	}
+☞ 출력)	현재속도 : 80
+	색    상 : 빨강
+	주행거리 : 20000
+	==============
+	현재속도 : 200
+	색    상 : 파랑
+	주행거리 : 15000
+
+☞ 입력)	public class Restraunt 
+	{
+		private String rice;
+		private String side1;
+		private String side2;
+		private String calory;
+		private String soup;
+		private int price;
+		
+		public String getRice() 
+		{
+			return rice;
+		}
+		public void setRice(String rice) 
+		{
+			this/*this.는 멤버변수를 뜻함*/.rice = rice;
+		}
+		public String getSide1() 
+		{
+			return side1;
+		}
+		public void setSide1(String side1) 
+		{
+			this.side1 = side1;
+		}
+		public String getSide2() 
+		{
+			return side2;
+		}
+		public void setSide2(String side2) 
+		{
+			this.side2 = side2;
+		}
+		public String getCalory() 
+		{
+			return calory;
+		}
+		public void setCalory(String calory) 
+		{
+			this.calory = calory;
+		}
+		public String getSoup() 
+		{
+			return soup;
+		}
+		public void setSoup(String soup) 
+		{
+			this.soup = soup;
+		}
+		public int getPrice() 
+		{
+			return price;
+		}
+		public void setPrice(int price) 
+		{
+			this.price = price;
+		}
+		
+		public String toString() 
+		{
+			return "Restraunt [rice=" + rice + ", side1=" + side1 + ", side2=" + side2 + ", calory=" + calory + ", soup=" + soup + ", price=" + price + "]";
+		}
+	}
+
+★ 앞의내용 : 객체 지향 실제 세계를 모델링하여 소프트웨어를 개발하는 방법
+★ car abbacha = new car(); 그림으로 ???	스택에 abbacha라는 주소값 , heap에 car(abbacha)객체
+★ 어제의 구조체와 함수는 따로따로인데 JAVA클래스는 둘다 똑같은 공간에 사용해도 상관X? 상관없음
+★ JAVA는 객체지향만??? 다른언어는??? 절차지향 객체지향 둘다 가지고있음(JAVA) , 다른언어는 거의다 절차지향
+★ 자바에서만의 객체(다른 프로그래밍 언어에서는 해당X) 다른언어는 아님? C++,JAVA,PHP가 객체 지향
+
+★ 셋터 , 겟터 , toString , private 다시 공부

@@ -1,0 +1,499 @@
+JAVA (Day 08)
+
+■ 상속 : 현실세계 = 부모에게 재산을 물려받는것... , 프로그래밍 = 어떤 클래스가 다른 클래스의 멤버변수와 멤버함수를 물려받는 것
+● 상속 형태 :	class 서브클래스(상속받는클래스명) extends 슈퍼클래스(상속받을클래스명)
+		{
+			문장;
+		}
+● 프로그래밍에서 {}안에서 밖으로 나가서 사용은 불가능!!! , {}밖에서 안으로 들어와서 사용은 가능!!!
+● JAVA에서는 상속받는자가 누구한테 상속받을지 정할 수 있음 , 자식이 부모른 선택 가능(현실이랑 반대!!!)
+
+☞ 입력)	public class Car 
+	{
+		public int speed;
+		public int gear;
+		public String color;
+		
+		public void setSpeed(int speed) 
+		{
+			this.speed = speed;
+		}
+		public void setGear(int gear) 
+		{
+			this.gear = gear;
+		}
+		public void setColor(String color) 
+		{
+			this.color = color;
+		}
+	}
+☞ 입력)	public class SportsCar extends Car
+	{
+		public boolean turbo; [turbo가 true = 켜지고 , false = 꺼지고]
+	
+		public void setTurbo(boolean turbo) 
+		{
+			this.turbo = turbo;
+		}	
+	}
+☞ 입력)	public class CarTest 
+	{
+		public static void main(String[] args) 
+		{
+			SportsCar sCar = new SportsCar();
+			
+			sCar.color = "RED";
+			sCar.setGear(3);
+			sCar.setSpeed(200);
+			sCar.setTurbo(true);
+			
+			System.out.println(sCar.color);
+			System.out.println(sCar.gear);
+			System.out.println(sCar.speed);
+			System.out.println(sCar.turbo);
+		}
+	}
+☞ 출력)	RED
+	3
+	200
+	true
+
+● 메소드 재정의(method overriding) : 서브 클래스가 필요에 따라 상속된 메소드를 다시 정의하는 것
+● 부모클래스와 자식클래스의 메소드명이 같으면 자동으로 매소드 재정의(method overriding)기능 실행
+
+☞ 입력)	class Parent
+	{
+		int data = 100;
+		public void print()
+		{
+			System.out.println("부모임");
+		}
+	}
+	
+	class Child extends Parent
+	{
+		int data = 200;
+		public void print()
+		{
+			int data = 300;				[지역변수]
+			super.print();				[부모클래스(Parent클래스)의 print()호출]
+			System.out.println("자식임");
+			System.out.println(data);			[this.가 없기 때문에 메소드안에 있는 지역변수 출력 = 300]
+			System.out.println("this.data : " + this.data);	[this.data : 멤버변수(class안의)(메소드안의아님) data = 200]
+			System.out.println("super.data : " + super.data);	[super : 슈퍼클래스 , 부모클래스 = 100]
+		}
+	}
+	
+	public class ParentTest 
+	{
+		public static void main(String[] args) 
+		{
+			Child c = new Child();
+			c.print();
+		}
+	}
+☞ 출력)	부모임
+	자식임
+	300
+	this.data : 200
+	super.data : 100
+
+☞ 입력)	class Parent
+	{
+		int data = 100;
+		public Parent()
+		{
+			System.out.println("Parent의 기본생성자");
+		}
+		public void print()
+		{
+			System.out.println("부모임");
+		}
+	}
+	
+	class Child extends Parent
+	{
+		int data = 200;
+		public Child()
+		{
+			[super();이 코드가 생략 되어있는것 , 너무 많이 사용되어서 생략]
+			System.out.println("Child의 기본생성자");
+		}
+		public void print()
+		{
+			int data = 300;
+			super.print();  //부모클래스(Parent클래스)의 print()호출
+			System.out.println("자식임");
+			System.out.println(data);
+			System.out.println("this.data : " + this.data);
+			System.out.println("super.data : " + super.data); //super : 슈퍼클래스 , 부모클래스
+		}
+	}
+	
+	public class ParentTest 
+	{
+		public static void main(String[] args) 
+		{
+			Child c = new Child();
+			c.print();
+		}
+	}
+☞ 출력)	Parent의 기본생성자		[자식생성자 불리기 전에 부모생성자가 먼저 불리는것을 확인할 수 있음... , 상속받으면 자식클래스의 객체를 만들때 부모를 먼저 만들고 자식을 그다음에 만					들어서 이어붙인다는 개념을 이해하면 당연한 이야기...]
+	Child의 기본생성자
+	부모임
+	자식임
+	300
+	this.data : 200
+	super.data : 100
+
+■ 객체지향에서의 다형성 :	- 전제 = 부모클래스의 참조변수로 자식클래스의 객체를 참조할 수 있음.(자식클래스의 객체에는 부모클래스로 만든 객체를 포함하기 때문)
+
+			- 부모클래스의 참조변수로 자식클래스 객체를 참조했을 때 부모클래스에 존재하는 멤버만 접근가능
+			- 부모클래스의 참조변수로 자식클래스의 객체를 참조해서 부모클래스에 존재하는 멤버함수 호출시 자식클래스에서 해당 메소드를 오버라이딩 했다면 실제 호출되는 함			  수는 자식에서 오버라이딩한 메소드가 호출됨(동적바인딩)
+● 다형성 왜 그럴까??? : 서브클래스 객체는 슈퍼클래스 객체를 포함하고 있기 때문이다.
+
+☞ 입력)	public class Rectangle extends Shape
+	{
+		private int width;
+		private int height;
+		
+		@Override
+		public void draw() 
+		{
+			System.out.println("사각형을 그립니다 슥슥삭삭");
+		}
+		
+		public int getWidth() 
+		{
+			return width;
+		}
+		public void setWidth(int width) 
+		{
+			this.width = width;
+		}
+		public int getHeight() 
+		{
+			return height;
+		}
+		public void setHeight(int height) 
+		{
+			this.height = height;
+		}
+	}
+☞ 입력)	public class Circle extends Shape
+	{
+		private int radius;
+	
+		@Override
+		public void draw() 
+		{
+			System.out.println("원을 그립니다 똥글똥글");
+		}
+	
+		public int getRadius() 
+		{
+			return radius;
+		}
+		public void setRadius(int radius) 
+		{
+			this.radius = radius;
+		}
+	}
+☞ 입력)	public class Triangle extends Shape
+	{
+		private int base;
+		private int height;
+		
+		@Override
+		public void draw() 
+		{
+			System.out.println("세모를 세모세모");
+		}
+		
+		public int getBase() 
+		{
+			return base;
+		}
+		public void setBase(int base) 
+		{
+			this.base = base;
+		}
+		public int getHeight() 
+		{
+			return height;
+		}
+		public void setHeight(int height) 
+		{
+			this.height = height;
+		}
+	}
+☞ 입력)	public class Shape 
+	{
+		public int x , y;
+		
+		public void draw()
+		{
+			System.out.println("도형을 그려봅시다");
+		}
+		public void print() 
+		{
+			System.out.println("나는야 Shape의 Print다!!!!!");
+		}
+	}
+☞ 입력)	public class Cylinder extends Shape 
+	{
+		@Override
+		public void draw() 
+		{
+			System.out.println("실린더를 쇽쇽");
+		}
+	}
+☞ 입력)	public class ShapeTest 
+	{
+		public static void main(String[] args) 
+		{
+			[Rectange이 Shape를 상속받았기 때문에
+			Shape의 참조변수로 Rectangle 객체를 참조 가능함.]
+			Shape s = new Rectangle();
+			
+			[Rectangle이 Shape를 상속받았고
+			Shape가 print()메소드를 정의했으므로 당연 호출가능]
+			s.print();
+			
+			[Rectangle에는 setWidth(int)메소드가 존재하지만
+			부모클래스의 참조변수로 참조했을 때는 Shape에도 존재하는
+			멤버에만 접근가능함]
+			[s.setWidth(10);]
+			
+			[draw는 Shape가 정의했으므로 접근 가능하고
+			Rectangle이 오버라이딩했으므로 실제 실행되는 함수는 Rectangle의 draw(동적바인딩)]
+			s.draw();
+			
+			
+			
+			Shape[] shape = new Shape[4];	[Shape[] : 데이터타입의 배열]
+			shape[0] = new Rectangle();
+			shape[1] = new Circle();
+			shape[2] = new Triangle();
+			shape[3] = new Cylinder();
+			
+			for(int i = 0 ; i < shape.length ; i++)
+			{
+				shape[i].draw();
+			}
+		}
+	}
+☞ 출력)	나는야 Shape의 Print다!!!!!
+	사각형을 그립니다 슥슥삭삭
+	사각형을 그립니다 슥슥삭삭
+	원을 그립니다 똥글똥글
+	세모를 세모세모
+	실린더를 쇽쇽
+
+☞ 입력)	public class Animal 
+	{
+		protected String name; //public 폴더가 달라도 데이터 교환O , protected 폴더가 다르면 데이터 교환X , private 본인클래스 내에서만 데이터 교환 O
+		
+		public void bark()
+		{
+			System.out.println("동물이 짖어요");
+		}
+		
+		public String getName() 
+		{
+			return name;
+		}
+		public void setName(String name) 
+		{
+			this.name = name;
+		}
+	}
+☞ 입력)	public class Goat extends Animal
+	{
+		public Goat() {}	//Goat의 기본생성자
+		public Goat(String name)
+		{
+			this.name = name;
+		}
+		@Override
+		public void bark()
+		{
+			System.out.println(name + "가 짖습니다. 음메~~~~~");
+		}
+	}
+☞ 입력)	public class Cow extends Animal
+	{
+		public Cow() {}		//Cow의 기본생성자
+		public Cow(String name)
+		{
+			this.name = name;
+		}
+		@Override
+		public void bark() 
+		{
+			System.out.println(name + "이가 짖습니다. 음머~~~~");
+		}
+	}
+☞ 입력)	public class Chicken extends Animal
+	{
+		//치킨객체가 프라이드인지 아닌지를 저장할 변수
+		private boolean fried;
+		public boolean isFried() 
+		{
+			return fried;
+		}
+		public void setFried(boolean fried) 
+		{
+			this.fried = fried;
+		}
+	
+		
+		public Chicken() {}	//Chicken의 기본생성자
+		public Chicken(String name)
+		{
+			this.name = name;
+		}
+		@Override
+		public void bark()
+		{
+			System.out.println(name + "가 짖습니다. 꼬끼오!~!~!~!~!");
+		}
+	}
+☞ 입력)	public class AnimalTest 
+	{
+		public static void main(String[] args) 
+		{
+			Animal[] animals = new Animal[3];
+			animals[0] = new Goat("아기염소");
+			animals[1] = new Cow("황소");
+			animals[2] = new Chicken("호식이");
+			
+			//부모클래스의 타입으로 자식객체를 참조했을 때는 부모클래스에 존재하는 멤버변수와 멤버함수에만 접근이 가능함. 자식영역에만 존재하는 멤버에는 접근 불가능
+			//animals[2].setFried(true);
+			
+			//객체 형변환
+			//자식클래스로 형변환을 통해 자식에만 존재하는 멤버에 잠시 접근이 가능
+			((Chicken)animals[2]).setFried(true);
+			
+			//자식클래스와 자식클래스는 cast 불가능!!! , 맞지않는 타입으로 형변환을 하려고하면 런타임에러가 발생한다.
+			//((Chicken)animals[0]).setFried(true);
+			
+			for(Animal a : animals)
+			{
+				a.bark();
+			}
+		}
+	}
+☞ 출력)	아기염소가 짖습니다. 음메~~~~~
+	황소이가 짖습니다. 음머~~~~
+	호식이가 짖습니다. 꼬끼오!~!~!~!~!
+	
+● [참조변수] instanceof [타입] : 참조변수가 타입의 객체를 참조할 수 있는 타입이라면 true를 return , 아니면 false를 return
+
+☞ 입력)	public class AnimalTest 
+	{
+		public static void main(String[] args) 
+		{
+			Animal[] animals = new Animal[3];
+			animals[0] = new Goat("아기염소");
+			animals[1] = new Cow("황소");
+			animals[2] = new Chicken("호식이");
+			
+			//부모클래스의 타입으로 자식객체를 참조했을 때는 부모클래스에 존재하는 멤버변수와 멤버함수에만 접근이 가능함. 자식영역에만 존재하는 멤버에는 접근 불가능
+			//animals[2].setFried(true);
+			
+			//객체 형변환
+			//자식클래스로 형변환을 통해 자식에만 존재하는 멤버에 잠시 접근이 가능
+	        		//((Chicken)animals[2]).setFried(true);
+			
+			//자식클래스와 자식클래스는 cast 불가능!!! , 맞지않는 타입으로 형변환을 하려고하면 런타임에러가 발생한다.
+			//((Chicken)animals[0]).setFried(true);
+			
+			if(animals[0] instanceof Chicken)
+			{
+				System.out.println("animals[0]은 치킨이야");
+			}
+			if(animals[2] instanceof Chicken)
+			{
+				System.out.println("animals[2]는 치킨이다");
+			}
+			if(animals[2] instanceof Chicken)
+			{
+				((Chicken) animals[2]).setFried(true);;
+			}
+			for(Animal a : animals)
+			{
+				a.bark();
+			}
+		}
+	}
+☞ 출력)	animals[2]는 치킨이다
+	아기염소가 짖습니다. 음메~~~~~
+	황소이가 짖습니다. 음머~~~~
+	호식이가 짖습니다. 꼬끼오!~!~!~!~!
+
+■ 예외 처리 : 오류가 발생하더라도 오류를 우아하게 처리하게 합니다. , 프로그램이 뻗는 상황(런타임에러 발생)이 왔을 때 어떻게 대응할지에 대한 명세를 코드로 작성해주는 것. -> 그러면 예외가 발생해도 프로그램이 뻗지 않고 계속 동작
+● 예외(exception) : 런타임 에러만 -> 프로그램이 실행중에 어떤~ 이유로 뻗어버림...
+● try블록은 예외가 발생할 수 있는 위험한 코드이다. catch블록은 예외를 처리하는 코드이다.
+● try에서 예외(exception)가 발생하면 그 즉시 catch블록으로 이동
+
+☞ 입력)	public class Test 
+	{
+		public static void main(String[] args) 
+		{
+			int x = 1;
+			int y = 0;
+			
+			try 
+			{
+				int result = x / y;
+			} 
+			catch (ArithmeticException e)		[catch(예외(exception)의종류 변수명)][관례적으로 변수명 e임]
+			{
+				System.out.println("0으로 못나누나보네ㅜㅜ");
+			}
+			System.out.println("이 구문... 실행 될까요?");
+		}
+	}
+☞ 출력)	0으로 못나누나보네ㅜㅜ
+	이 구문... 실행 될까요?
+☞ 입력)	public class Test 
+	{
+		public static void main(String[] args) 
+		{
+			int x = 1;
+			int y = 1;
+			
+			try 
+			{
+				int result = x / y;
+			} 
+			catch (ArithmeticException e) 		[catch(예외(exception)의종류 변수명)][관례적으로 변수명 e임]
+			{
+				System.out.println("0으로 못나누나보네ㅜㅜ");
+			}
+			System.out.println("이 구문... 실행 될까요?");
+		}
+	}
+☞ 출력)	이 구문... 실행 될까요?	[catch문은 반드시 예외(exception)가 발생해야만 실행된다.]
+
+♨ 예시 코딩 문제 : 배열에서 인덱스가 범위를 벗어나도 예외가 발생된다. 크기가 10인배열을 생성하고 11번째 원소에 0을 대입하여 보라. 이 예외를 처리하는 try-catch 블록을 만들어 보라.
+☞ 입력)	public class Test2 
+	{
+		public static void main(String[] args) 
+		{
+			int[] x = new int[10];
+			
+			try 
+			{
+				x[10] = 0;
+			}
+			catch (ArrayIndexOutOfBoundsException e)	[catch(예외(exception)의종류 변수명)][관례적으로 변수명 e임]
+			{
+				System.out.println("catch문");
+			}
+			System.out.println("프로그램 종료");
+		}
+	}
+☞ 출력)	catch문
+	프로그램 종료

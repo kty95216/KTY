@@ -1,0 +1,161 @@
+JAVA (Day 03)
+
+■ 조건문
+● if - else문
+● if - else문 형태 : 	if(조건식)
+		{
+			문장1;
+		}
+		else
+		{
+			문장2;
+		}
+● if,else의 {}가 없는 경우 첫번 째 1줄만 if,else의 종속문장이 된다. -->if,else문에 포함될 문장이 2줄 이상일 때는 {}중괄호로 명령어들을 감싸줘야한다.
+● else는 절대로 혼자서 사용 불가 XXX -> if랑 같이 사용해야한다.
+☞ 입력)	public class ifExample
+	{
+		public static void main(String[] args) 
+		{
+			int score = 83;
+			
+			if(score >= 90)
+			{
+				System.out.println("점수가 90보다 큽니다.");
+				System.out.println("등급은 A입니다.");
+			}
+			else
+				[if문의 조건이 맞지 않을 때 실행되는 문장]
+			{
+				System.out.println("점수가 90보다 작습니다.");
+				System.out.println("등급은 B 입니다.");
+			}
+				
+			System.out.println("끝인가요?ㅎㅎ");
+		}
+	}
+☞ 출력)	점수가 90보다 작습니다.
+	등급은 B 입니다.
+	끝인가요?ㅎㅎ
+
+● 중첩 if : if(조건식1)		if문 안에 if문가능 , else문 안에 if문가능
+		if(조건식2)
+	 else(조건식1)
+		if(조건식2)
+● 연속적인 if : else if 문
+☞ 입력)	import java.util.Scanner;
+	
+	public class ifExample2 
+	{
+		public static void main(String[] args) 
+		{
+			Scanner input = new Scanner(System.in);
+			double score;
+			
+			System.out.print("점수를 입력 하세요 : ");
+			score = input.nextDouble();
+			
+			if(score >= 90)
+				System.out.println("A등급");
+			else if(score >= 80)
+				System.out.println("B등급");
+			else if(score >= 70)
+				System.out.println("C등급");
+			else if(score >= 60)
+				System.out.println("D등급");
+			else
+				System.out.println("바보입니다.");
+				
+		}
+	}
+☞ 출력)	점수를 입력 하세요 : 75
+	C등급
+
+■ Math라는 꾸러미는 수학적인 기능들을 담고있다.
+■ Math.random(); : 0.00000000 ~ 0.99999999 까지의 임의의 숫자를 생성해줌
+■ 형변환 : (변환 후의 데이터 타입)변활 할 데이터
+
+♨ 예시 코딩 문제 : math.random()을 사용해서 1이나오면 1나왔음 2나오면 2나왔음 ... 6나오면 6나왔음을 if, else, else if문 등을 사용
+☞ 입력)	public class ifExample3 
+	{
+		public static void main(String[] args) 
+		{
+			int num1;
+			
+			num1 = (int)(Math.random() * 6 + 1);
+			System.out.println(num1);
+			
+			if(num1 == 1)
+				System.out.println("1나옴");
+			else if(num1 == 2)
+				System.out.println("2나옴");
+			else if(num1 == 3)
+				System.out.println("3나옴");
+			else if(num1 == 4)
+				System.out.println("4나옴");
+			else if(num1 == 5)
+				System.out.println("5나옴");
+			else
+				System.out.println("6나옴");
+					
+		}
+	}
+☞ 출력)	5
+	5나옴
+
+■ switch-case 문 : 여러 가지 경우 중에서 하나를 선택하는데 사용 , 연결되는곳만 실행됨 , 정확한 값을 넣음, 조건식을 넣지 못함	[병렬구조] , case = 경우
+● default : 기본값 초기값의 의미 이지만 switch에서의 default는 else와 같다고 생각하면 됨!!!
+● 만약 case문에 break;문이 없으면 그다음 case문들은 조건을 무시하고 모두 실행!!!
+☞ 입력)	import java.util.Scanner;
+	
+	public class SwitchTest 
+	{
+		public static void main(String[] args) 
+		{
+			int number;
+			
+			Scanner scan = new Scanner(System.in);
+			System.out.print("숫자를 입력 하시오 : ");
+			number = scan.nextInt();
+			
+			switch(number)		switch(정확한 값)(정수형 이외 데이터 타입도 가능)
+			{
+			case 0:			[number가 0일 경우][ : 주의하기][case에는 변수가 들어가면안됨!!! 상수만!!!정해져 있는 값만!!!변수는 수시로 변할 수 있어서 불가능!!!]
+				System.out.println("없음");
+				break;		[switch문 전체를 빠져나감]
+			case 1:
+				System.out.println("하나");
+				break;
+			case 2:
+				System.out.println("둘");
+				break;
+			default:			[if문의 else와 같다고 생각]
+				System.out.println("많음");
+				break;
+			}
+		}
+	}
+☞ 출력)	숫자를 입력 하시오 : 5
+	많음
+
+	숫자를 입력 하시오 : 1
+	하나
+
+♨ 예시 코딩 문제 : 사용자한테 정수를 1개 입력받아서 100미만이면 미꾸스몰, 100 ~ 200미만이면 미꾸미디움, 200이상이면 미꾸라지를 출력하세요 (스위치 - 케이스문 사용)
+☞ 입력)
+☞ 출력)
+
+♨ 예시 코딩 문제 : 교안 6장 선택과 반복 P.22 위 문제 (switch만 사용)
+☞ 입력)
+☞ 출력)
+
+♨ 예시 코딩 문제 : 교안 6장 선택과 반복 P.22 아래 문제 (switch만 사용)
+☞ 입력)
+☞ 출력)
+
+♨ 예시 코딩 문제 : 교안 6장 선택과 반복 P.22 위 문제 (if, else, else if만 사용)
+☞ 입력)
+☞ 출력)
+
+♨ 예시 코딩 문제 : 교안 6장 선택과 반복 P.22 아래 문제 (if, else, else if만 사용)
+☞ 입력)
+☞ 출력)

@@ -1,0 +1,136 @@
+JAVA (Day 04)
+
+■ 반복문
+● while문 : if와 비슷함 , 조건이 만족하면 계속 반복
+● while문 형태 : 	while(조건식)
+		{
+			문장;
+		}
+● 두문장 이상 반복할꺼면 { } 묶어주면 됨
+● 반복문이 수행되기 전에 초기화되고 조선식에 영향을 주고 반복구문안에서 증감하는 이런변수를 "반복계수"라고 한다.
+● 반복계수가 변하지 않으면 반복문은 계속돌거나 (무한루프) 아예 돌지 못 할 상황임... 일반적인상황에서 반복구문안에서 조건에 영향을 주는 값을 변경시킴
+● if문 : 조건이 만족되면 한번만 실행된다. while 문 : 조건인 만족되면 여러번 반복 실행된다. 비슷한 구조이기 때문에 if문을 while문으로 while문을 if문으로 변경이 가능
+
+● do-while 문 : while의 조건식이 참이든 거짓이든 상관없이 do의 문장을 먼저 실행 -> while의 조건식을 계산 -> 참이면 do의 문장을실행하고, 거짓이면 종료됨 
+● do-while 문 형태 : 	do
+			{
+				문장;
+				i++;
+			} while(조건식);
+
+☞ 입력)	public class whiletest 
+	{
+		public static void main(String[] args)
+		{
+			int i = 0;		[반복문이 수행되기 전에 초기화되고 조선식에 영향을 주고 반복구문안에서 증감하는 이런변수를 "반복계수"라고 한다.]
+			while (i < 5)
+			{
+				System.out.println("정수 : " + i);
+				i++;	[반복계수가(이 조건이) 변하지 않으면 반복문은 계속돌거나 (무한루프) 아예 돌지 못 할 상황임... 일반적인상황에서 반복구문안에서 조건에 영향을 주는 값을 변경시킴]
+			}
+		}
+	}
+☞ 출력)	정수 : 0
+	정수 : 1
+	정수 : 2
+	정수 : 3
+	정수 : 4
+
+● for문 : 몇번 반복할건지 횟수를 정해주면 그 횟수를 반복
+● for문 형태 : 	for(초기화 ; 조건 ; 증감)
+		{
+			문장;
+		}
+● 두문장 이상 반복할꺼면 { } 묶어주면 됨
+☞ 입력)	public class fortest 
+	{
+		public static void main(String[] args)
+		{
+			for (int i = 0 ; i<5 ; i++)	[i의 데이터타입 넣는거 주의!!!]
+			{
+				System.out.println("i의 값은 : " + i);
+			}
+		}
+	}
+☞ 출력)	i의 값은 : 0
+	i의 값은 : 1
+	i의 값은 : 2
+	i의 값은 : 3
+	i의 값은 : 4
+
+● 중첩 반복문 : 반복문 안에 다른 반복문이 위치한다 (거의 for문으로 사용하고 while문으로는 사용X)
+● 중첩 반복문 형태 :	for(초기화 ; 조건 ; 증감)
+		{
+			문장;
+			for(초기화 ; 조건 ; 증감)
+			{
+				문장;
+			}
+		}
+☞ 입력)	public class nestedlooptest 
+	{
+		public static void main(String[] args) 
+		{
+			for(int y = 0 ; y<5 ; y++)
+			{
+				for(int x = 0 ; x<10 ; x++)
+				{
+					System.out.print("*");
+				}
+				System.out.println("");
+			}
+			
+		}
+	}
+☞ 출력)	**********
+	**********
+	**********
+	**********
+	**********
+
+☞ 입력)	public class nestedlooptest2 
+	{
+		public static void main(String[] args) 
+		{
+			for(int i = 1 ; i<=5 ; i++)
+			{
+				for(int x = 0 ; x<i ; x++)
+				{
+					System.out.print("*");
+				}
+				System.out.println();
+			}
+		}
+	}
+☞ 출력)	*
+	**
+	***
+	****
+	*****
+
+☞ 입력)	public class nestedlooptest3 
+	{
+		public static void main(String[] args) 
+		{
+			for(int i = 1 ; i<=5 ; i++)
+			{
+				for(int x = i; x < 5 ; x++)
+				{
+					System.out.print(" ");
+				}
+				for(int j = 0; j < i ; j++)
+				{
+					System.out.print("*");
+				}
+				System.out.println();
+			}
+		}
+	}
+☞ 출력)	    *	[공백 4]
+	   **	[공백 3]
+	  ***	[공백 2]
+	 ****	[공백 1]
+	*****	[공백 0]
+
+● break문 : switch문과 반복문에서 break문을 만나면 그 즉시!!! switch문과 반복문을 빠져나감	[switch문 반복문에서 사용가능]
+● continue문 : continue 밑의 문장들을 다무시하고 다시 for문의 증감식부터 시작 ,하지만 while문에서는 증감식까지 무시하기 때문에 증감하지 않고 while의 조건식부터 시작	[반복문에서만 사용가능]

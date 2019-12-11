@@ -1,0 +1,136 @@
+Java (Day 02)
+
+☞ 입력)					[두수의 합을 계산하는 애플리케이션]
+	public class Add 
+	{
+		public static void main(String args[])
+		{
+			int x;		[변수 선언]
+			int y;
+			int sum;
+			
+			x = 100;		[대입 연산자 , 변수의 초기화]
+			y = 200;
+			sum = x + y;
+			
+			System.out.println(sum);
+		}
+	}
+☞ 출력)	300
+
+■ 산술연산자
+● + : 덧셈 , - : 뺄셈 , * : 곱셈 , / : 나눗셈 , % : 나머지 계산
+
+● 라이브러리 : 사용자가 사용하기 편리하도록 만들어 놓은 기능들의 집합(모음) , 가져다가 사용하기만 하면 됨.
+● new : 새로운 무언가를 만드는 연산자
+● System : 보통은 운영체제의 뜻 (Operating System) , Java에서는 표준이라는 뜻
+● . : Java에서 . 은 경로를 뜻함 [윈도우의 \ 와 같다]
+
+● Scanner : 사용자로부터 입력받는 역할
+☞ 입력)				[사용자가 입력한 두 개의 숫자를 더해서 출력한다.]
+	import java.util.Scanner; 	[Scanner =Scanner 함수 포함][라이브러리에서 스캐너 함수들을 import함][. = 경로][import = 수입하다][java폴더안의 util폴더안의 Scanner함수들을 수입하다]
+	public class Add
+	{
+				[메인 메소드에서부터 실행이 시작된다.]
+		public static void main(String args[])
+		{
+				[사용자로부터 입력을 받기위해 Scanner를 생성한다.]
+			Scanner input = new Scanner(System.in);	[앞의 Scanner = 데이터 타입][input = 스캐너 이름][new = 새로 무언가를 만드는 연산자][뒤의 Scanner = 스캐너][System = 표준][in = input 줄임말][System.in = 표준입력 = 키보드][input이름의 스캐너 변수 선언]
+			
+			int x; 	[첫 번째 숫자 저장]
+			int y; 	[두 번째 숫자 저장]
+			int sum; 	[합을 저장]
+			
+			System.out.print("첫번째 숫자를 입력하시오: "); 	[입력 안내 출력]
+			x = input.nextInt(); 				[사용자로부터 첫 번째 숫자를 읽는다.][input = 스캐너 이름][next = 다음][Int = 정수의 데이터타입][. = 경로][input.nextInt() = input이라는 스캐너 경로안에 있는 nextInt()함수][input이라는 스캐너의 다음정수 입력 값을 x에 대입]
+			
+			System.out.print("두번째 숫자를 입력하시오: ");	[입력 안내 출력]
+			y = input.nextInt(); 				[사용자로부터 두 번째 숫자를 읽는다.][input = 스캐너 이름][next = 다음][Int = 정수의 데이터타입][. = 경로][input.nextInt() = input이라는 스캐너 경로안에 있는 nextInt()함수][input이라는 스캐너의 다음정수 입력 값을 y에 대입]
+			
+			sum = x + y; 				[두 개의 숫자를 더한다.]
+			
+			System.out.println(sum); 			[합을 출력한다.]
+		}
+	}
+☞ 출력)	첫번째 숫자를 입력하시오: 100
+	두번째 숫자를 입력하시오: 50
+	150
+
+☞ 입력)	import java.util.Scanner;
+	
+	public class Add2
+	{
+		public static void main(String[] args)
+		{
+			Scanner input = new Scanner(System.in);
+			
+			int x;
+			int y;
+			int sum;
+			
+			System.out.println("첫번째 값을 입력하시오 : ");
+			x = input.nextInt();
+			System.out.println("두번째 값을 입력하시오 : ");
+			y = input.nextInt();
+			
+			sum = x + y;
+			
+			System.out.println("x + y = " + sum + "입니다.");	[java는 문자열이랑 숫자랑 연산이 가능]
+		}
+	}
+☞ 출력)	첫번째 값을 입력하시오 : 
+	10
+	두번째 값을 입력하시오 : 
+	20
+	x + y = 30입니다.
+
+● 자동완성 기능 : Ctrl + Space Bar
+
+♨ 예시 코딩 문제 : 사용자로부터 국어, 영어, 수학, 컴퓨터 과목의 점수를 입력받아서 평균점수를 출력해보세요. 출력 ex) 평균점수는 : ??점입니다.	[정수 : int , 실수 : double 사용]
+☞ 입력)	import java.util.Scanner;
+	
+	public class Add3
+	{
+		public static void main(String[] args)
+		{
+			Scanner input = new Scanner(System.in);
+			
+			double korean = 0;
+			double english = 0;
+			double math = 0;
+			double computer = 0;
+			double sum = 0;
+			double average = 0;
+			
+			System.out.println("국어 점수 : ");
+			korean = input.nextInt();
+			System.out.println("영어 점수 : ");
+			english = input.nextInt();
+			System.out.println("수학 점수 : ");	[("내용") = println의 함수라는 의미]
+			math = input.nextInt();		[() = 함수라는 의미]
+			System.out.println("컴퓨터 점수 : ");
+			computer = input.nextInt();
+			
+			sum = korean + english + math + computer;
+			average = sum / 4;
+			
+			System.out.println("평균점수는 : " + average + "점 입니다.");
+		}
+	}
+☞ 출력)	국어 점수 : 
+	99
+	영어 점수 : 
+	99
+	수학 점수 : 
+	99
+	컴퓨터 점수 : 
+	100
+	평균점수는 : 99.25점 입니다.
+
+■ Java의 기초 자료형 (데이터타입)
+● Java에서 ""는 문자열로 인식하기 때문에 char은 문자의 데이터타입이기 때문에 반드시 ''만 사용해야한다. 
+● String = 문자열의 데이터타입 이기 때문에 ""만사용 (하지만 Java의 기초 자료형은 아니다) , S는 대문자 주의!!!
+● boolean = 참 , 거짓을 판별하는 데이터타입
+
+■ 연산자
+● 삼항연산자 = true false ? true : false (?앞의 관계연산을 해서 true이면 :의 앞 , false이면 :의 뒤)
