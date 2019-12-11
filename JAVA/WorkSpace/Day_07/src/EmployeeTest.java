@@ -1,0 +1,28 @@
+
+public class EmployeeTest 
+{
+	public static void main(String[] args) 
+	{
+		Employee e1, e2, e3;
+		
+		e1 = new Employee("철수", 35000);
+		e2 = new Employee("영희", 40000);
+		e3 = new Employee("민상", 50000);
+		
+		int n = Employee.getCount();
+		System.out.println("현재 직원 수 : " + n);
+		
+		System.out.println(e1);
+		e1 = null;		//객체의 주소값 없앰 , stack영역의 값이 null (주소값이 null) , heap영역의 데이터는 아직 살아있음
+						//객체가 언제 사라지는지는 모름.
+		System.out.println(e1);
+		
+		//가비지 컬렉터를 강제로 일으키기
+		//사용하지마세요!!!
+		System.gc();	//가비지컬렉터(쓰레기 값 청소기) 깨워서
+		System.runFinalization();	//일해라!!!
+		
+		n = Employee.getCount();
+		System.out.println("2현재 직원 수 : " + n);
+	}
+}
