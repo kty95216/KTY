@@ -1,0 +1,845 @@
+http://www.w3schools.com
+https://themes.getbootstrap.com/
+https://startbootstrap.com/
+
+HTML(Hyper Text   Markup Language)
+
+1.HTML(Hyper Text Markup Language)이란?   
+  인터넷 전용 브로우저에 그림이나 text 를 표현할 수 있도록 해 주는 언어 
+  
+2.홈페이지는 HTML로 Page를 구성하여 만들어진다.
+ 
+3.HTML을 꼭 배워야 하나?
+   웹환경의 직업을 가지려면 HTML은 기본이다. 
+
+4. 기본적인 HTML문서 만들기
+  ①작업도구 설정 : Internet Explorer같은 Browser와 메모장 같은 Editer
+  ②Editor로 입력하고 저장 : 확장자는 반드시 htm, html 이어야 한다. 
+     요즘은 동적인 웹사이트를 위해 asp나 php 화일로도 만든다.
+  ③확인 : 웹브라우저로 확인 
+
+【02】HTML제대로 쓰기
+
+1.HTML의 특징
+  ① 태그는 대소문자 구분이 없다. (but, CSS에서의 속성명은 대소문자 구분있음)
+      문서 파일명은 정확히 대소문자 구별합니다
+  ② 확장자는 반드시 htm, html로 만들어야 한다.
+  ③ Enter, Spacebar, Tab은 작용되지 않는다. (특정기호나 태그로 구현)
+  ④ 태그의 순서(시작태그, 종료태그)를 반드시 지켜야 웹브라우저가 인식한다.
+      <a href=http://www.daum.net> 다음 </a>
+      <img src="temp/aaa.gif"  >  <br> <p>
+  
+  ⑤ 파일이나 폴더명은  반드시 여백이 없는 영문자일 것.
+
+2. HTML의 구성요소
+  ① 태그(Tag) : '<'와 '>'로 묶인 명령어
+      <태그>...</태그>의 형태를 이룬다.  --> 요소(Elements)라고 한다.
+  ② 속성(Attribute) : 시작태그에 필요에 따라 속성이라는 옵션을 가진다.
+       <img src="필수속성">   <img src='필수속성'>  <img src=필수속성> 
+       <table  border=1옵션속성> 
+  
+  ③ 값(Value) :속성에 대한 값을 의미 (" "또는 ' '안에 넣어 표시)
+      <태그  속성1="값1" 속성2="값2">...</태그> 
+
+3. HTML문서의 기본구조(필수표기)
+   <HTML>   -------------------> HTML문서의 시작
+      <HEAD></HEAD>----------> 문서의 머리부분 (웹페이지상에는 보이지 않는다)
+      <BODY>여기에 눈에 보이는 태그기술 </BODY>----------> 웹페이지상에 보이는 모든 정보
+   </HTML>  -------------------> HTML문서의 끝  
+
+【03】<HEAD> 태그의 시작 
+
+1. <TITLE>...</TITLE> ---> 페이지의 제목달기
+    - 웹브라우저 상단에 사이트의 제목을 보여주는 태그
+    - 즐겨찾기에 적히는 제목이기도 하다 : 사이트를 홍보할 수 있는 훌륭한 마케팅 수단이 됨
+    - 되도록 한글로 작성: 브랜드명, 명료한 사이트특성. 한글도메인명도 좋다.
+    c,f, 꼭 <HEAD>...</HEAD>사이에 삽입하지 않아도 보는데는 문제없음 
+
+2. <META>...</META> --->홈페이지의 홍보담당
+   ⓐ 한글폰트 지정
+      <META http-equiv="content-type" content="text/html;charset=euc-kr">
+   ⓑ keywords 지정 : 검색사이트의 검색엔진이 수시로 수집하는 키워드 ---> 홍보효과
+      <META name="keywords" content="웹디자인,웹마스터,webdesign,webmaster,html">
+       콤마(,)를 제외한 최대 256자 까지 지정할 수 있다.
+   ⓒ description 지정 : 검색엔진에서 listup된 홈페이지에 대한 설명문
+      <META name="description" content="웹디자인을 배우는 사람을 위한 사이트입니다.">
+   ⓓ 문서이동 : 방문시 몇 초 후에 다른 곳으로 이동하게 하는 태그
+      <META http-equiv="refresh" content="초간격;url= 이동할 홈페이지주소">
+      초간격을 0으로 하면 접속됨과 동시에 바로 다른 사이트로 이동한다.
+   ⓔ 제작자명 지정
+      <META name="author" content="(주)스타트디자인"> 
+
+3. <BASE href="절대경로URL">
+    절대경로를 지정해 두면 이후에 쓰여진 상대경로들은 절대경로에 붙여져서 인식된다.
+    <HEAD>에서 <BASE href="http://www.hd4u.co.kr">라 지정하고 다음과 같이 쓰면
+    <A href="service/service-1.htm">이렇게 링크했을때 주소는? <A>
+     실제로 인식되는 경로는 http://www.hd4u.co.kr/service/service-1.htm이 된다. 
+
+4. 이 외에도 <HEAD>에는 CSS와 Javascript 가 삽입되기도 한다. 
+
+【04】<BODY>지정하기 
+
+1.<BODY>는 웹 브라우저상에 보여지는 모든 내용들이 표현되는 곳이다.
+2.<BODY bgcolor="#16진수색상값/색상명"   ----> 배경색상 
+           text="#16진수색상값/색상명"  ---------> 문자색상
+           link="#16진수색상값/색상명"  ---------> 한번도 방문한 적이 없는 링크의 색상(파랑)
+           vlink="#16진수색상값/색상명" ---------> 한번 방문한 적이 있는 링크의 색상(보라)
+           alink="#16진수색상값/색상명" ---------> 링크를 클릭했을때의 색상(빨강)
+                                                   요즘은 CSS 가상클래스로 활용되는 추세
+           leftmargin="숫자" topmargin="숫자" ----> internet Explorer에서 인식하는 태그
+           marginwidth="숫자" marginheight="숫자" >Netscape에서 인식하는 태그
+                                                   지정하지 않으면 기본값은 8pixel offset한다.
+           background="이미지파일명"   ---------> 배경그림
+           bgproperties="fixed"   ----------------> 배경그림 고정하기 (Watermark :불법복제방지)
+                                                    CSS의 background-repeat 지정으로도 구현
+  </BODY>
+
+   자동라인enter기능 태그 <br> <p>  <hr>  <h숫자> <ul> <tr>
+   enter기능적용없는 태그 <a href>  <font size>  <img src> 
+
+3.별로 쓰이지는 않지만
+  <ADDRESS>...</ADDRESS>
+   홈페이지의 주소, E-mail, 회사명등을 이탤릭체로 보여준다.  
+   (링크기능이 있는건 아니다) 
+
+4.주석달기
+
+  html  <!-- -->
+  <!-- 삽입할 설명 --> : 차후의 수정이나 보완을 쉽게 할 수 있게 한다.
+                         
+
+05】텍스트 처리 태그 1 
+1. <BR> 줄바꿈 태그
+   - line BReak 의 약자.  HTML문서의 어느곳에서든 강제로 줄바꿈할 수 있다.
+   - 여러개 줄바꿈은 <BR>을 여러번 이러 쓰면 된다.
+   - 종료태그가 없다.
+      예) <BR><BR><BR> 은 세줄 줄바꿈 
+
+2. <Hn>...</Hn>  n:1~6 의 숫자
+    <Hn  align = "left/right/center/justify">  ---> 글자의 정렬(왼쪽/오른쪽/중앙/가지런한정렬)
+   </Hn>
+
+   - Heading 의 약자.  문장의 타이틀 제목으로 사용된다. 볼드체로 표현
+   - 글자의 크기는 H1>H2>H3>H4>H5>H6 순이다 
+   - 자동 줄 바꿈기능을 포함한다.
+   - 숨겨진 기능
+       메타태그처럼 검색엔진이 <H1>,<H2>등의 큰 제목을 검색수집하여 결과에 보여주기도 한다. 
+       시각장애인용 컴퓨터에서 <H>태그를 사용한 문장은 더 강하게 읽어주게 된다. 
+
+3. <HR> 선그리기
+     Horizontal Rule 의 약자. 텍스트사이에 선을 긋는다.
+    <HR width = "선의 길이값, 퍼센트값"
+           size = "선의 두께값"        ----------> 퍼센트값은 없다.
+           align = "left/rigth/center" 
+           color = "색상값" 
+           noshade >      --------------------> 입체감 없애기
+   - 세로선은 그을 수 없다. 자동 줄바꿈기능 포함
+   - 종료태그가 없다.
+
+4. <FONT>...</FONT> 글자조절  ---> 최근에는 CSS로 표현하게 되어 잘 사용하지 않게됨
+     <FONT size = "글자의 지정크기값"   ---> 1~7까지 지정되어 있고 7이 가장 크다.
+                                             기본값은 3 이고  +, -상대값 으로 지정할 수 있다.
+                face = "서체명"      ------------> face=Comic Sans MS
+                color = "색상값"> ... </FONT>  
+
+5. <BASEFONT>글자의 기본값 설정
+    <BASEFONT size="글자크기" face="서체명"  color="색상값">
+   - 페이지전체에 적용될 글자의 기본값 지정
+   - <HEAD>...</HEAD>내에 쓰여짐.
+   - 종료태그가 없다.
+
+6. <P>와 <P>...</P> 단락태그
+   - Paragraph의 약자
+   - <P> : <BR><BR>과 같은 효과.  <BR>과 달리 연속으로 사용해도 <P>한번으로 인식한다.
+   - <P align="left/right/center">...</P> : 전체 텍스트에서 독립된 문단을 만들어준다.  
+
+예) <BR><BR><BR><BR>  4줄 줄바꿈 
+예) <p><p><p><p>  8줄 줄바꿈 적용안됨=>  엔터2번적용 
+
+
+7. <CENTER>...</CENTER>   글자, 이미지, 표 등을 중앙에 정렬   
+
+8. <DIV>...</DIV>  단락 정렬 태크
+   <DIV align = "left/right/center" style = "css적용">...</DIV>
+   - <P>...</P>와 유사하나 <DIV>에는 <BR>효과가 없다.
+
+
+
+【06】텍스트 처리 태그 2 
+
+1.<PRE>...</PRE> 글자위치를 자유롭게
+   PREfotmatted text 의 약자.  공백, 탭, 줄바꿈, 띄어쓰기, ASCII문자 등을 그대로 표현
+   - 고정폭(모든 글자의 폭이 동일한 글꼴, 영문 Courier서체,굴림체,바탕체등 )으로 표시된다.
+      고로 html 문서 작성할때 고정폭서체를 사용하여야 웹상에서도 같이 나온다. 
+
+2. <BLOCKQUOTE>...</BLOCKQUOTE> 문장 들여쓰기
+   - 탭을 사용한 효과
+   - 한줄 또는 여러줄로 된 인용문 만들때 사용 
+
+3. <NOBR>...</NOBR> 줄바꿈을 하고 싶지 않을때 사용
+      NO line BReak 의 약자
+   - HTML 문서는 브라우저의 화면에 맞게 자동으로 줄바꿈을 해준다. 
+     그러나 줄바꿈을 강제로 못하게 할때 <NOBR>을 사용한다.  --> 하단의 가로 스크롤바 생성 
+
+4. <WBR> 강제 줄바꿈
+     Word BReak 의 약자. 
+    - <NOBR>...</NOBR>안에서 사용가능. 이외에서 사용하면 웹브라우저가 무시한다. 
+
+5. <MARQUEE>...</MARQUEE> 스크롤되어 움직이는 글자
+    특정지역을 움직이며 지나가는 문자열 .  익스플로러에서만 지원된다.
+    <MARQUEE width = "움직이는 영역의 너비값"   ---> 픽셀이나 퍼센트값
+                      height = "움직이는 영역의 높이값" 
+                      bgcolor = "색상값"
+                      behavior = "alternate/scroll/slide" ---> 좌우반복/왼쪽방향반복/왼쪽방향1회
+                      direction = "left/right/up/down"     ---> 왼쪽/오른쪽/위쪽/아래쪽 방향
+                      loop = "반복횟수"    -----------------> "infinite"나 "-1"이면 무한반복
+                      scrollamount = "한번에 이동하는 픽셀값"
+                      scrolldelay = "글자가 움직이는 속도" >    ----> 단위는 1/1000초
+     </MARQUEE>
+
+【07】 문자장식 태그 
+
+1.물리태그 : 글자의 내용과는 상관없이 외향적으로 드러나는 문자 장식에 쓰는 태그
+   <B>..</B>       : 굵은 글자로 만든다.
+   <I>..</I>         : 이탤릭체로 만든다.
+   <TT>..</TT>    : 타자체로 만든다
+   <SUP>..</SUP>: 윗첨자
+   <SUB>..</SUB>: 아래첨자
+   <U>...</U>       : 글자에 밑줄을 그어준다.
+   <S>...</S>       : 글자의 중앙에 선을 그어준다. 취소 또는 삭제의 의미로 사용
+   <BIG>...</BIG> : 기존에 사용된 글자보다 크게 표시
+   <SMALL>...</SMALL>: 기존에 사용된 글자보다 작게 표시
+   <BLINK>...</BLINK>: 글자를 깜박이게 한다. 넷스케이프전용 
+
+2. 특수문자 표기법
+   HTML 문서상에서 직접 쓸수 없는 문자들(<,>,"",& 등등)을 하나의 문자로 표현하기 위해
+   특수문자를 사용한다. 특수문자 엔티티 형식 : &로 시작하여 ; 로 끝난다.
+  
+      < 는 &lt; , > 는 &gt; 
+      & 는 &amp; , " 는 &quot; ,    
+      공백은 &nbsp;  으로 표현한다
+
+【08】이미지와 멀티미디어 처리 
+
+1. <IMG> 이미지 삽입하기
+    <IMG src ="이미지 파일명"
+             width ="이미지의 넓이"
+             height ="이미지의 높이"
+             border ="테두리값" 
+             align   ="left/right/top/middle/bottom"  --> left,right는 이미지 배치와 관련
+                                                          top,middle,bottom은  이미지옆의 글자배치
+
+             hspace ="이미지와 글자간 좌우여백"
+             vspace ="이미지와 글자간 상하여백"
+             alt       ="풍선도움말 내용" -------> 대체 텍스트라고도 한다. 
+             lowsrc ="처음에 나타날 이미지명" --> 넷스케이프전용. 용량이 큰 원이미지를 부르기
+                                    전에 용량이 작은 이미지를 먼저 읽어보여주는 두단계 가져오기 속성
+                                    ---> 요즘은 컴퓨터의 발달로 의미가 퇴색된 기능
+
+ 
+2.  동영상연결
+     배경음악 넣기
+       <BGSOUND src = "사운드 파일명"     ---> 익스플로러 전용. 주로 MID파일 사용
+                      loop = "반복횟수"  >   ------> 반복횟수값이 -1 또는 infinite이면 무한반복 
+
+    <div align="center">
+      <video  autoplay="true" loop="loop"  
+                 src="christmas.mp4" width=700 height=450 
+                  controls='controls' />
+    </div>
+
+【09】<LIST> 리스트 목록만들기 
+
+1. <UL>비순차적 목록
+   - Unordered List 의 약자.  세부리스트항목은 <LI>태그로 사용
+   - <LI>에는 <BR>태그 속성이 포함된다.
+   <UL type="disc/circle/square">       -------> bullet 모양지정   검정색원/흰색원/검정사각형
+       <LI type="disc/circle/square">내용1   ---> <LI>에서 개별적으로도 지정할 수있다.
+        :
+       <LI>내용n
+    </UL>
+
+2. <OL>순차적 목록
+    - Ordered List의 약자.  순서를 표현하는 방식을 지정할 수 있다.
+   <OL type="A/a/I/i/1"      -----> A,a(영문대,소문자)/I,i(그리이스수대소문자)/1(아라비아숫자)
+          start="적용할 시작순서">
+         <LI type="A/a/I/i/1"
+             value="적용할 시작순서"> ----> <OL>에서는 start, <LI>에서는 value
+   </OL> 
+
+3. <DL>정의 목록 : 어떤 용어를 정의하여 풀어 나열한다.
+      Definition List의 약자. DT(Definition Term), DD(Definition Description)과 함께 쓴다.
+
+   <DL>
+       <DT>정의    </DT>                  -------><DD>는 <DT>가 적용된 곳에서 한탭 들여쓰기 적용된다.
+       <DD>정의에 대한 해설    </DD>             마찬가지로 <BR>태그 속성이 포함된다.
+       
+       <DT>정의    </DT>                  -------><DD>는 <DT>가 적용된 곳에서 한탭 들여쓰기 적용된다.
+       <DD>정의에 대한 해설    </DD>             마찬가지로 <BR>태그 속성이 포함된다.
+   </DL>
+
+【10】<A> 링크걸기
+
+1. 텍스트나 이미지에 링크걸기
+   Anchor(닻)으로 원하는 곳으로 자유롭게 이동하기
+   <A href = "파일이름 or URL>텍스트나 이미지</A>
+   <A href = "링크할 파일주소"
+        name = "현재문서의 위치표시명(책갈피)"
+        target = "frame 명"                ------------>frame에서 사용
+        title="도움말 형식의 툴팁으로 사용할 글" 
+        style = "적용할 스타일시트 적용" ></A> 
+
+   ※ 링크점선을 없애려면
+       <A href="http://www.yahoo.co.kr" onfocus="this.blur()">image1.gif</A> 
+
+2. 특정위치로 이동하기
+   ① 현재 페이지내에서
+      <A href="#원하는 위치의 책갈피명"></A>
+      <A name="원하는 위치의 책갈피명"></A>
+   ② 다른 페이지의 특정위치이동
+      <A href="URL#원하는 위치의 책갈피명"></A>
+      <A name="원하는 위치의 책갈피명"></A> 
+
+3. 링크로 전자메일 보내기
+   <A href="mailto:메일주소"></A>
+   메일의 제목, 본문내용의 미리 설정방법은
+    <A href="mailto:메일주소?subject=편지제목&BODY=본문의 내용을 적습니다"> 
+
+4. 또 다른 링크대상
+   이미지 파일(gif, jpg), 사운드파일(wav, au, mid). 동영상파일(mpeg, mov),
+   압축파일(zip): 사용자의 pc로 다운로드 하게 한다.
+      ㅡㅡ> 단 MS Office가 있는 pc에서는 바로 볼수 있는 파일을 다운로드하고 싶으면 
+            마우스 오른쪽 버튼의 다른이름으로 대상 을 눌러 다운로드한다.  
+
+【11】 <TABLE> 보기좋은 레이아웃 
+
+1. 좋은 레이아웃을 위한 제안 Table
+  ⓘ 표는 분할된 이미지를 모아준다.  
+      무게가 큰 이미지를 분할하여 이음새없는 하나의 이미지로 재구성해주는 역할
+  ② 홈페이지의 전체 레이아웃은 표를 이용한다.
+  ③ 테이블 셀 하나에도 배경이미지나 색상을 삽입할 수 있다. 
+
+2. 기본형식
+     <TABLE>
+       <CAPTION>...</CAPTION> --> 표의 상단에 제목을 적을때 사용. 생략가능.
+       <tr>                  ----------> Table Row. 표의 한줄을 정의      
+
+           <th>...</th>        ------> 생략가능. Table Header의 약자. 표의 내부의 제목으로 사용 
+           <td>...</td>        ------> Table Data. 표안에 있는 하나의 셀. 아주 중요한 요소
+        </tr>
+     </TABLE>
+   - 테이블안에 테이블을 또 지정할 수 있다.
+
+3. 속성
+   <TABLE border="0"         ------> 외곽테두리 두께를 0로 지정. 기본값은 "1"
+                width="너비"     ------> 전체 테이블의 가로크기. 픽셀값과 %값이 있음
+                height= "높이"   ------> 전체 테이블의 세로크기. 픽셀값과 %값이 있음
+                align="left/right/center" --> 문서에서의 테이블의 위치
+                cellpadding="픽셀값"   ---> 테두리와 내용데이터와의 간격. 상하좌우 모두 적용
+                cellspacing="픽셀값"   ---> cell과 cell사이의 투명한 간격 
+                bgcolor="색상값/명"    ---> 배경색
+                background="이미지명" --> 배경이미지 파일 주소
+                bordercolor="색상값/명" --> 테이블의 전체 외곽선에 색상을 지정
+                bordercolorlight="색상값/명"     ----> 외곽선의 밝은 부분의 색상지정(익스플로러만)
+                bordercolordark="색상값/명" >  ----> 외곽선의 어두운 부분의 색상지정
+
+     <CAPTION align="top/bottom">  ----->상하조절
+     </CAPTION>
+     <TR align="left/right/center"  -------> 행에 있는 모든요소에 적용된다.
+            bgcolor="색상값/명"
+            background="이미지명">  ------>행 전체요소에 이미지 삽입 (넷스케이프에서만) 
+        <TD align="left/right/center"  ----->셀내에서의 좌/우/중앙 위치지정
+               valign="top/middle/bottom" -->셀내에서의 상/중앙/하단 위치지정
+               width="너비"             -------->셀의 가로크기. 픽셀값과 %값이 있다.
+               height="높이"            -------->셀의 세로크기. 픽셀값과 %값이 있다.
+               bgcolor="색상값/명"
+               background="이미지명"
+               rowspan="합칠 셀갯수"  ------>세로 셀들을 합칠때 사용
+               colspan="합칠 셀갯수"  ------>가로 셀들을 합칠때 사용
+               nowrap >         -------------> 셀내에서 자동으로 줄바꿈하지 못하게 한다.
+                                               셀의 width가 데이타의 크기에 따라 넓혀진다.  
+         </TD>
+      </TR>
+
+【12】 <FRAME> 분할된 문서구조 
+
+1.Frame이란? 하나의 웹브라우저의 화면을 두개 이상의 분할하여 사용하는 것
+             즉, 각각의 독립적인 정보를 갖는 분할된 영역들을 말한다
+  - Frameset : 분할된 영역들을 컨트롤할 수 있는 또하나의 페이지 
+  - 장점 : 관리의 편리성, 이동의 일관성(일정한 화면의 제공)
+  - 단점 : 배치의 문제점(네비게이션 혼란), 검색엔진 등록의 문제(<NOFRAME>으로 해결가능) 
+
+2. 프레임 셋 페이지 구조
+   <HTML>
+      <HEAD>
+      </HEAD>
+      <FRAMESET rows="50%,*">       -----> <HEAD>..</HEAD> 와 <BODY>..</BODY>사이
+          <FRAME src="영역1에 들어갈 페이지">  --->파일명
+          <FRAME src="영역2에 들어갈 페이지">
+      </FRAMESET>
+      <BODY></BODY> --->  <BODY>는 사용하지 않아도 된다.
+   </HTML> 
+
+  - 가로와 세로의 복합된 구조로 영역을 나누는 경우
+     프레임셋안에 프레임과 또하나의 프레임셋을 지정하는 내재된 프레임셋구조로 구현한다.
+      <FRAMESET rows지정>   ---> rows 와 cols의 속성은 함께 쓰일수 없다.
+          <FRAME>
+          <FRAMESET cols지정>
+              <FRAME>
+              <FRAME>
+          </FRAMESET>
+       </FRAMESET>
+3. <FRAMESET rows="n1,n2"   ---> n1,n2은 픽셀값 또는 %와 *(나머지크기)로 표시될 수 있다.
+                       cols="n1,n2"            n1과 n2로 분할되는 프레임구조임을 표시
+                       frameborder="no/yes"  ---> 프레임과 프레임간의 경계선 표시여부 
+                       border="픽셀값"          ---> 프레임과 프레임의 간격크기
+                       framespacing="픽셀값">--> 프레임셋 내부의 프레임들의 간격                       
+
+      <FRAME src="파일명"   -----> 해당 프레임영역에 올려질 페이지의 파일명
+                    name="프레임이름"      ----> <A>링크에서 target 에 지정되는 이름
+                    border="픽셀값"          ----> 프레임 경계선의 두께
+                    marginwidth="픽셀값"   ----> 프레임 문서에 여백주기
+                    marginheight="픽셀값" 
+                    scrolling="auto/yes/no"  ---> 스크롤바의 표시여부. auto는 페이지길이에 따름
+                    noresize >                 -----> 사용자들이 화면을 맘대로 조절할 수 없게 한다.
+
+ 4. 프레임에 링크 설정하기
+    프레임문서내에서 
+    <A href="주소" target="프레임명"> : 지정된 프레임화면에 링크결과를 보여준다.
+                                 ="_top"         : 모든 프레임화면을 무시하고 새로운 HTML문서를 불러옴
+                                 ="_blank       : 링크되는 문서를 새창으로 보여줌
+                                 ="_parent"     : 프레임의 상위 프레임셋에 보여준다.
+                                 ="_self"
+
+【13】 <IFRAME> 문서내에 프레임 삽입하기
+
+1. Iframe 이란? Internel Frame 의 약자. 문서내에 일정크기의 영역을 할애하여 프레임삽입
+    익스플로러와 넷스케이프 7.0 에서만 지원
+   <IFRAME>...</IFRAME>   ---> <BODY>...</BODY> 사이에 삽입되어야 한다. 
+
+2. <IFRAME src="불러들일 HTML파일"  
+                  width ="픽셀값"        -----> iframe의 넓이
+                  height ="픽셀값"       -----> iframe의 높이
+                  marginwidth ="픽셀값" ---> 프레임의 좌우여백 
+                  marginheight ="픽셀값" ---> 프레임의 상하여백 
+                  frameborder ="픽셀값"  ---> 프레임의 구분선을 지정 
+                  scrolling="yes/no/auto" > --> 프레임의 스크롤바 설정
+
+【14】 <FORM>입력양식 만들기
+
+1. FORM이란? 정보를 입력 또는 선택하고 버튼을 클릭하며 정보를 서버에 전달하고 응답받는 
+             양방향의 의사소통을 지원하는 입력양식이다.
+   - Form 의 내부에는 <INPUT>,<SELECT>,<TEXTAREA> 등의 태그들이 포함된다.
+※CGI (Common Gateway Interface) : 
+   <FORM>태그 내부의 데이터를 서버측으로 전송하기 위해 사용하는 프로그램.
+    C, Visual Basic, Perl, PHP, ASP 등을 이용하여 작성하며, 
+    폼의 name속성 이름으로 테이터를 구분하게 된다. name 속성의 값과 유저가 입력한 값이 한 쌍이 되어 서버측에 전달된다.
+
+2. 구조
+   <FORM action="URL"     ---------> CGI가 있는 경로
+               enctype="MIME형식" ----> 폼을 서버에 전송하는데 사용하는 형식
+               method="get/post"    ----> 데이터가 반환되는 유형을 결정. 기본값은 get, 주로 post
+               target="프레임명">    ----> 폼입력된 데이터가 서버를 거쳐 처리된 결과 표시할 프레임
+      <INPUT type="입력받는 형식" --> text,password,checkbox,radio,submit,reset이 있다.
+                 name="입력변수명"  ---> 서버에 전송될 양식의 이름
+                 value="기본입력값"  ---> 입력변수의 초기값
+                 size="입력양식길이" --->입력필드길이
+                 maxlength="입력문자수"  --> 실제 입력할 수 있는 최대문자수
+                 src="URL"     ---------> 이미지버튼을 만들때 이미지의 주소
+                 checked>    ----------> 체크박스와 라디오버튼일 경우 기본선택값 설정
+
+       각 type별 적용 속성이 다르다. 예를들면,
+       <INPUT type="text" name="var1" value="이름" size="10" maxlength="8"> 
+       <INPUT type="password" name="var1" value="이름" size="10" maxlength="8"> 
+       <INPUT type="checkbox" name="var1" value="노랑" checked>-->하나의 name 에 
+       <INPUT type="checkbox" name="var1" value="빨강" >          value값만 다르게 구성
+       <INPUT type="checkbox" name="var1" value="파랑" checked>    여러개 선택가능
+       <INPUT type="radio" name="var1" value="노랑" checked>--> 단 하나의 선택만 가능
+       <INPUT type="radio" name="var1" value="빨강" >           
+       <INPUT type="radio" name="var1" value="파랑" >
+       <INPUT type="submit" value="버튼명" >
+       <INPUT type="reset"   value="버튼명" >
+       <INPUT type="image" src="이미지경로명" border="이미지테두리두께" >
+       <INPUT type="file" name="이름" size="크기">   ----> 찾아보기 버튼이 생긴다. 
+       <INPUT type="hidden" name="이름"  value="데이터값"> --> 웹상에는 보이지 않는 변수처리 
+
+       <SELECT name="입력변수명"      ----> 서버에 전송될 양식의 이름
+                      size="보여질 항목갯수"  ---> 드롭다운메뉴의 줄수지정
+                      multiple>   ---------------> 다중선택메뉴일 경우
+           <OPTION value="메뉴값"   --------> 실제 데이터처리되는 입력값
+                         selected>    -----------> 기본선택 지정
+                         메뉴항목 ---------------> 화면상에 리스트되는 항목
+            사용되는 구조
+           <OPTION value="메뉴값1" selected> 메뉴항목1
+           <OPTION value="메뉴값n">메뉴항목n
+        </SELECT>
+    </FORM>
+====================================================================================================
+【15】CSS 스타일시트 에 대한 이해 
+
+1. CSS(Cascading Style Sheets) : 
+    웹페이지에 자주 적용되는 부분들은 미리 정리하고 조합하여 정의한 후 
+    페이지 내부에서 필요할 때마다  해당부분을 적용하는 스타일시트중 하나.
+    HTML로는 부족한 레이아웃이나 폰트등에 다양성을 부여한다.
+   - 폰트 크기는 지정하는 수치에 따라 마음대로 조절가능 
+   - 자간/행간 배치가 자유로워 가독성을 높인다.
+   - 링크상의 밑줄 변형이 자유롭다.
+   - 페이지의 여백을 원하는 만큼 만들어 줄 수 있다. 
+
+<만드는 방법 3가지>
+1. <head></head>사이 기술
+2. <body>안에서 직접기술
+3. *.css(파일)로 따로 저장
+
+
+2. 기본구성
+   <HEAD>
+    <STYLE type="text/css">  ---> 스타일의 유형이 텍스트이고 그 파일은 css 이라는 뜻.
+       선택자 {속성1:값1 ; 속성2:값2}  선언문(속성과 값)간의 구분은 ;(세미콜론)이다.
+    </STYLE>
+   </HEAD> 
+
+3. CSS의 특성
+   ① 기존의 HTML기능을 확장해서 사용할 수 있다.
+   ② 한번의 지정으로 웹문서 모든 곳에 적용할 수 있다.
+   ③ CSS는 상위의 기능을 상속받을 수 있다.
+   ④ 복잡하지 않고 쉽게 파악할 수 있어 관리가 용이하다. 
+
+3. CSS의 종류
+   1) Inline Style Sheet
+   2) Embeded Style Sheet
+   3) External Style Sheet
+   4) Imported Style Sheet
+
+ 
+【16】CSS 선택자의 종류
+
+1. HTML 태그를 선택자로 사용
+   <STYLE type="text/css">
+       HTML태그 {속성1:값; 속성2:값2}
+   </STYLE>
+    해당 HTML 태그에는 모두 적용한다.
+
+   예) H2 {font-style:bold; color:green} 
+
+2. class를 선택자로 사용 (가장 많이 쓰는 유형)
+    <STYLE type="text/css">
+      .키워드 {속성1:값1; 속성2:값2}
+      태그.키워드 {속성:값}  ---->태그에 키워드를 붙혀 해당태그중 지정한 선언문을 전달한다.
+    </STYLE>
+
+    <BODY>안에서 적용할때는 <태그 class = "키워드" >의 형태로 사용한다.
+     예) 선언 : .zero  {color:green: font-size:10pt}
+                    p.one {color:red; font-size:9pt}   
+          적용 : <I class="zero"> ...</I>
+                   <P class="one">...</P>
+
+3. ID를 선택자로 사용(한페이지에서만 적용)---> 스크립트 기능을 넣은 DHTML적용시 고유이름이
+     <STYLE type="text/css">                           필요할 때 사용하는 것이 좋다.
+         #name {속성1:값1; 속성2:값2}
+     </STYLE>
+
+    <BODY>안에서 적용할때는 <태그 id="name" >의 형태로 사용한다. 
+     예) 선언 :  #A01 {color:red; font-size:10pt}
+          적용 :  <DIV id="A01">...</DIV> 
+
+4. 문장 선택자 (두개의 태그를 선택자로 사용)
+    <STYLE type="text/css">
+        태그1 태그2 {속성:값}
+    </STYLE>
+
+     예) P I {color:blue; font-size:9pt}
+     예) P I {color=blue; font-size=9pt}
+
+【17】CSS의 형태에 따른 구분 
+
+1. Embedded Style Sheet (<HEAD>에 삽입하여 문서전체관리)
+   가장 일반적인 유형이며 해당 페이지 전체에 영향을 준다.
+    <STYLE type="text/css">
+    <!--
+        태그1 {속성:값;} 
+     -->
+    </STYLE>
+
+2. Inline Style Sheet ( <BODY> 안의 각각의 태그에 직접 표기하여 적용하는 방식)
+   한줄로 늘여서 함께 사용한다는 의미.
+   해당 태그에만 영향을 준다.
+   <태그 style="{속성:값;}">....</태그> 
+
+3. External Style Sheet ( 외부문서을 불러와서 적용하는 방식)
+    CSS의 가장 강력한 기능을 제공하는 방법 ---> 웹사이트의 전체적인 통일성을 부여한다.
+    Linked Style Sheet 형식으로 따로 만들어 놓은 CSS파일(*.css)를 불러온다.
+    <Link rel="stylesheet"    ---> 불러올 파일과 현재문서와의 관계(relation)
+             type="text/css"    ---> 메타태그에서 기본값으로 스타일시트를 설정하면 생략해도 됨.
+             href="abc.css" >  ---> 외부에 저장된 스타일시트 파일경로
+
+   ※메타태그에 스타일시트 설정방법
+    <META http-equiv="content-style-type" content="text/css">
+     그러나, 메타태그에 설정하는 것보다는 <STYLE>태그에 type속성을 표기하는 것이 더 일반적.
+
+4. Imported Style Sheet ( 외부 스타일시트 불러오기)
+   <STYLE>태그를 사용한다. 
+   <STYLE>태그 바로 아래에 적용되어 다른 태그보다 우선해야 제대로 적용된다.
+   <STYLE type="text/css">
+    <!--
+        @import url("파일명");
+    -->
+    </STYLE>
+
+※ 스타일의 우선순위 규칙
+  1) 선언문에 !important 라고 표기하면 적용위치와 상관없이 항상 최우선적으로 적용.
+  2) 제일 마지막에 적은 스타일시트가 우선순위를 갖는다.
+     Inline > Embedding > Linked, @import    
+  3) 선언이 안된 경우는 상속된 값을 따르고, 상속이 지정되지 않으면 브라우저 기본값으로 설정
+  4) 선택자 우선순위
+     ID선택자 > Class선택자 > 문장선택자 > HTML선택자 
+
+※ CSS의 주석달기
+   1) <!--  --> : 기본적으로는 보이지 않게 한다는 의미이지만 중요한 기능적인 역할이 있다.
+                       CSS를 지원하지 않는 브라우저를 만나면 CSS를 적용하지 않게 한다.
+                       에러가 난 부분을 제외한 나머지 부분은 적용할 수 있게 한다.
+   2) /*  ... */  : 복잡한 주석문을 달때 사용한다.
+
+
+【18】CSS의 상속성과 그룹화 
+
+1. 상속성(Inheritance)
+   - 태그안에 또 다른 태그의 적용시 상위태그의 영향을 받는다.
+     예)<P> 스타일시트는 <B >상속성</B>을 가진다.</P>
+   - 태그안의 태그에만 스타일 시트를 적용하려면 문장선택자를 사용하여 선언한다.
+   - 상위태그의 속성과 하위태그의 속성이 중복되는 경우는 하위태크 속성 개별적으로 적용받지만,
+      하위태그에서 지정하지 않은 속성은 상위태크의 속성이 그대로 적용된다.
+     예)<P> 스타일시트는 <B style="color:red;dont-size:15pt"> 상속성</B>을 가진다.</P>
+   - 태그안에 다른 태그를 여럿 사용할 때 <SPAN>...</SPAN>사용
+     <SPAN style="color:purple">가진다</SPAN>
+
+ 2. 그룹화(Grouping)
+    - 유사한 스타일들을 묶어 동일태그반복을 최대한 절제하고 구조적으로 관리하게 한다.
+   1) 선택자의 그룹화 : 선언문이 동일한 경우
+       선택자1, 선택자2, 선택자3 {속성:값;}   ----> ,(콤마)로 구분
+   2) 속성의 그룹화 :  부분속성들을 대표속성이 동일한 경우(font, background,margin,border등)
+       속성명이 대표속성-부분속성 의 형태로 만들어진 것들을 묶어 {대표속성:값1 값2  값3}
+       예) p {border-width:2; border-style:dotted; border-color:red;}
+           ------> p {border:2 dotted red}   -----> ,(콤마)를 쓰지 않음 주의!
+
+【19】가상클래스와 가상요소 
+
+1. 가상클래스(Pseudo-classes: 슈도클래스)
+    스타일시트상에는 실제 존재하지 않지만 필요에 의해 임의로 가상의 선택자를 지정하여 사용함.
+    link, visited, hover(마우스 over시), active(클릭) 의 color, text-decoration, font-family 지정
+    <STYLE type="text/css">                 가상클래스에는 link, visited, hover, active가 있다.
+      A:가상클래스 { color:색상값/명; ----> 각클래스에 해당되는 색상 지정
+                            text-decoraion :underline/none/overline ;
+                            fonr-family:서체명1,서체명2,서체명3 ;} --->사용자의 폰트지원을 고려한 것
+
+   ※ 이중줄긋기 : text-decoration:underline overline 적용시 윗줄 아래줄이 같이 표시된다.
+   ※ 한 화면에 두가지 형태의 링크 주기
+
+        class선택자와 가상클래스의 적절한 사용으로 해결
+        <STYLE type="text.css">
+           A:link {color:blue}
+           A.class1:link {color:yellow; font-size:15pt}
+           A.class2:link {color:red; font-size:10pt}  
+         </STYLE>
+
+2. 가상요소(Pseudo-Elements)
+    현재 사용되는 것은 first-line, first-letter 정도 이다.
+   ① first-line : 적용된 첫번째 라인에만 영향을 준다. 둘째라인부터는 속성 무시
+     <STYLE type="text/css">
+       p:first-line {속성:값}
+       p {속성:값}
+     </STYLE>
+
+   ② first-letter : 적용된 첫번째 글자에만 영향을 준다.
+     <STYLE type="text/css">
+       p:first-letter {속성:값}
+       p {속성:값}
+     </STYLE>
+
+【20】CSS속성(FONT,TEXT, BACKGROUND)
+
+1. FONT                                                                                                           은 기본값
+    { font-family: 서체1, 서체2, ....;   --->서체지정 ,(콤마)로 구분한다.
+      font-style: normal/italic/oblique; --> 글꼴모양.  기본형/이텔릭체/기울어진글꼴
+      font-weight:normal/bold/bolder/lighter/두께값 ; --> 400/700/+100/-100/수치(100~900)
+      font-variant:normal/small-caps;  ---> 영소문자를 대문자로 바꿈
+      font-size: 글꼴크기값;}  ----------->단위는 px, pc, pt, in, cm, mm, %, em(기본값의 배수)
+                xx-small, x-small, small, medium, large, x-large, xx-large  (7단계크기) 보통9pt 사용
+
+2. TEXT
+    { text-decoration:none/underline/overline/line-through/blink ;  --> blink는 넷스케이프용
+      text-indent:수치값 ; ------> 들여쓰기위치지정.  길이단위, +수치(들여쓰기), -수치(내어쓰기)
+      text-align:left/center/right/justify ; --->문자열정렬. 왼쪽/가운데/오른쪽/오른쪽가지런히 
+      text-transform:capitalize/none/uppercase/lowecase ; 
+             ---> 대소문자 변환(font-variant의 확장개념).   capitalize :영문자의 첫자만 대문자로 
+      letter-spacing:길이단위수치 ; -------->자간설정. 상대적 길이단위인 em을 사용하면 편하다.
+      line-height:길이단위수치 ;  ----------> 문서의 줄간격(행간). 140% 정도가 가독성이 좋다.
+      vertical-align: baseline/    ----------> 이미지나 문자열을 수직정렬시 기본줄에 맞춘다.
+                          sub/super/  ----------> 아래첨자/윗첨자 로 표시한다.
+                          text-top/text-bottom/ ---> 텍스트와 함께 할 경우 맨 위에/ 아래에 맞춘다.
+                          top/middle/bottom/ ----> 이미지와 함께 할 경우 텍스트를 위/중앙/아래에.
+                          %값 ;}   ---------------> baseline을 기준으로 두요소의 수직정렬 위치지정
+
+3. color와 Background
+    { color: 색상명/색상값 ;  ---> 때로는 color:RGB(255,0,0)등으로도 표기할 수 있다.
+       background-color: 색상값/명/transparent ; --> transparent는 투명(기본값)
+       background-image:URL(이미지경로);
+       background-repeat: repeat/no-repeat/repeat-x/repeat-y ; --> 반복되는 형태지정
+       background-attachment: fixed/scroll ;    -----> 배경이미지를 고정시킴. 익스플로러전용
+       background-position:가로값 세로값 ;} --> %, 수치, top/left/right/bottom/center 로 지정 
+    - background의 shorthand 표기법
+     { background : white url(abc.gif) no-repeat fixed top right}  
+
+【21】CSS 속성 (margin, border, padding) 
+
+1. Margin (BOX 의 여백지정)
+   { margin-left : 여백값 ;   --------> %값이나 길이단위로 표시. 
+     margin-right :여백값 ;                 여백을 음수값을 주면 요소가 잘리는 현상발생
+     margin-top : 여백값 ;
+     margin-bottom : 여백값; }
+   - shorthand 로 표기할때 유의할 것
+    {margin : 10pt}                    --> 하나의 속성값만 표기하면 전체속성값이 동일
+    {margin : 10pt 20pt}              --> 두개의 속성값이 표기되면 상하/좌우 속성값을 말한다.
+    {margin : 10pt 20pt 30pt}        --> 세개의 속성값이 표기되면 상/좌우/하 속성값 
+    {margin : 10pt 20pt 30pt 40pt} --> 네개 각각의 속성값
+     이와같이 shorthand 방식으로 쓸수 있는 것으로
+      margin, border-width, border-style, border-color, padding이 있다.
+
+2. Border(테두리를 지정)
+ 1) 테두리선 모양 지정
+   { border-style : none/    ---------> border=0. 테두리가 없음
+                    dotted/dashed/ --> 점선모양/굵은 점선모양 (익스플로러 5.5 부터 가능)
+                    solid/double/  ----> 실선모양/이중 실선모양
+                    groove/ridge/  ----> 오목하게 들어간/볼록하게 나온 액자 테두리 모양
+                    inset/outset ;}  ----> 왼쪽 빛에 의해 명암을 준 모양으로 오목/볼록한 모양
+
+   이 속성도 방향에 따라 
+    border-top-style, border-bottom-style, border-left-style, border-right-style 의 부분속성 있다.
+
+ 2) 테두리의 폭지정
+    { border-width : thin/medium/thick/  --> 가늘게/보통/두껍게
+                           길이단위값 ;} 
+      border-top-width, border-bottom-width, border-left-width, border-right-width 가 있다.
+ 3) 테두리 색상설정
+    { border-color : 색상값/명 ;}  
+      border-top-color, border-bottom-color, border-left-color, border-right-color 있음
+
+3. Padding(컨텐츠=내용,  테두리사이의 간격)
+    { padding : 간격수치값 ;}
+      padding-top, padding-bottom, padding-left, padding-right
+
+4. Position (BOX의 위치지정)
+    택스트위에 텍스트를 올리거나 이미지를 올리거나 할때 사용한다.
+    { position : static/   ----> 이동성이 없는 정적인 형식. 크기속성만 있음
+                 relative/ ----> left top의 위치와 크기속성이 따라온다.  상대적 위치 -값도 가능 
+      위치를 지정할때 left/top 방식과 bottom/right 방식이 있으며 둘중 하나만 적용한다.
+      브라우저의 안쪽으로 이동하는 경우는 +, 바깥쪽으로 이동하는 경우는 - 값이 지정된다.
+                    absolute ;} --> left top의 위치와 크기속성이 따라온다. 절대적 위치(0,0)기준
+                                    z-index : 겹쳐지는 순서. 값이 클수록 위에 위치
+
+5. Visibility (숨김처리)
+    { visibility : visible/hidden  ----> hidden은 보여주지만 않을 뿐 영역은 유지된다.
+
+【22】CSS 속성 (리스트 목록)
+
+1. 리스트의 유형 정의
+   {list-style-type:disc/                ---------------> 검은원(●) bullet사용
+                    circle/              ---------------> 흰원(○) bullet 사용   
+                    square/            ---------------> 검은 사각형(■) 사용
+                    decimal/           ---------------> 아라비아숫자 표시
+                    lower-roman/upper-roman/ ----> 로마자 대/소문자 (ⅠⅡⅢ.../ⅰⅱⅲ...)
+                    lower-alpha/upper-alpha;} ----->영문자 대/소문자 ( A B C.../a b c...)
+
+2. 목록 스타일 - buller을 이미지로 지정하기
+    {list-style-image:URL(이미지경로)}   이미지로 말머리표(bullet)을 만들고 싶을때 사용
+                                         만약 이미지경로가 틀리면 list-style-type 으로 대체.
+3. 목록 스타일 위치
+    {list-style-position:inside/outside ;}     ----> 들여쓰기/내어쓰기 지정
+
+【23】CSS속성 ( 필터제어 )
+
+1. Filter 제어란 :글자나 이미지에 여러가지 효과 주기
+    {filter : filter효과(하위옵션1:값1, 옵션2:값2);}
+     예) style="filter:alpha(Opacity:10, finishopacity:100)" ---->inline 형식
+
+2. filter의 여러효과
+   ① Alpha : 내용의 투명도를 조절한다. image나 font에 주로 사용.
+              Font에 효과를 줄때는 반드시 height의 값을 주어야 한다.
+
+      {height:높이값; filter : alpha(Opacity : 수치값1, ---->처음에 적용될 부분의 불투명도(0~100)
+                                            style : 0/  -->투명한 모양 지정. 처음 투명도를 전체에 적용
+                                                    1/ -->왼쪽의 수치값1에서 오른쪽의 수치값2으로 변화
+                                                    2/ -->중앙의 수치값1에서 바깥쪽의 수치값2으로 변화
+                                                    3/ -->X자 대각선의 수치값1에서 끝부분 수치값2로 변화
+                                            finishopacity : 수치값2);}  --> 끝부분의 불투명도 (0~100)
+
+       예) 이미지 가장자리를 뽀얗게 하려면 
+           <IMG src=a.gif style="filter:alpha(opacity:100, style:2, finishopacity:3)">
+
+    ② Chroma : 특정 색상 빼기. 이미지에만 적용
+        {filter : chroma(color :색상값/명)} --> 반드시 정확한 값을 지정해야 한다
+
+    ③ Dropshadow : 떨어지는 그림자 효과. font에 적용시에는 반드시 height지정
+        {filter : dropshadow(color : 색상값/명,  ---> 그림자 색상
+                             offx : 수치값,   -------> X좌표에서 그림자를 떨어뜨릴 간격. + -값
+                             offy : 수치값,   -------> Y좌표에서 그림자를 떨어뜨릴 간격. + -값
+                             positive :0/      ------> 네거티브 그림자
+                             1);}    ------> 일반적인 그림자 (기본값)
+
+         예) < FONT style="height:15 ;
+                           filter:dropshadow(color:red, offx:5' offy:5, positive:1);">
+
+④ Shadow : 뻗어나가는 그림자 형태
+         {filter: shadow(color: 색상값/명,    ----> 그림자 색상
+                  direction:각도수치);} ---> 그림자의 방향. 8방향표시
+                                             표시된 수치를 45도의 배수기준으로 반올림
+
+         예) <FONT style="height:15 ;
+                          filter : shadow(color:red, direction:135);">
+
+    ⑤ Blur :흐리게 하는 효과. 직선적인 번짐효과. 원본까지 적용한다.
+         {filter : blur(add:0/    -------------> 완전흐림(원본까지 테두리의 경계를 같이 번지게)
+                        1,     -------------> 불완전흐림
+                        direction : 각도수치, ---> 번짐의 방향. 8방향
+                        strength : 수치);}  -----> 번짐효과의 강도(0~100) 수치가 클수록 효과크다.
+
+          예) <IMG src="a.gif style="filter:blur(add:1, direction:135, strenght:10)">
+
+    ⑥ Gray : 원본 색상을 무시하고 회색명암으로만 처리. 이미지에만 적용
+         { filter : gray()";} ----> 속성값이 없이 간단하다.
+          사용예) 자바스크립트와 같이 쓰인 예
+         <IMG src="a.gif" onmouseover = "style.filter= 'none';"
+                   onmouseout = "style.filter = 'gray()';"
+                   style = "filter:gray()">
+
+     ⑦ Invert :원본이미지 색상의 반대 보색 표현. 네거티브 필름효과
+         { filter : invert()}
+
+     ⑧ Xray : 이미지를 invert시킨후 다시 Gray 필터 적용한 효과
+               invert()와 gray()를 함께 쓸수 없기에 별도로 만듦
+               { filter : xray()}
+
+⑨ Wave :물결효과. 모든 태그에 통용된다.
+        {filter: wave(strength:수치  ---->휘어지는 정도(0~100). 기본값:0 
+                 lightstrength:수치 -->휘어지는 부분의 색상의 왜곡정도(0~100). 기본값:100
+                 add:0/  ----------> 원본이미지를 더할 것인지 지정. 기본값:0
+                 1,  ----------> 빛과 빛이 겹치면서 전체적으로 더 밝은 빛이 나옴
+                 freg:수치  --------> 웨이브의 빈도수. 기본값:3
+                 phase:수치 )}  ---> 웨이브 위치결정. 웨이브의 적용첫 위치 (0~100)
+
+     ⑩ Flipv, Fliph : 상하 좌우의 배열을 바꾼다.
+         {filter:flipv()} ---> vertical flip 상하로 뒤집는다.
+         {filter:filph()} ---> horizental flip 좌우로 뒤집는다.
+
+     ⑪ Glow : 방향을 가리지 않는 퍼짐효과. 뭉갬효과
+         {filter:glow(color: 색상값/명, ----> 퍼지는 부분의 색상
+                      strength: 수치)}   ----> 퍼짐의 강도(1~100) 수치가 높으면 퍼짐효과도 크다 
+                                               강도를 100으로 하면 배경색과 같은 효과
+     - 복합 필터의 지정은 <Span>을 이용한다.
+       <SPAN style="height:10; filter:alpha(opacity:5, style:1, finishopacity:100)">
+          <IMG src="a.gif" style="filter:flipv()">
+       </SPAN>
+
+
+
+
