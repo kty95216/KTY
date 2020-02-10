@@ -1,12 +1,12 @@
 '''
 a,b,c,d = 0,0,0,0;
 sum = 0;
-a = int(input("첫번째 숫자 입력:"));
-b = int(input("두번째 숫자 입력:"));
-c = int(input("세번째 숫자 입력:"));
-d = int(input("네번째 숫자 입력:"));
+a = int(input("Enter first number:"));
+b = int(input("Enter second number:"));
+c = int(input("Enter third number:"));
+d = int(input("Enter fourth number:"));
 sum = a + b + c + d;
-print("합계:%d"%sum);
+print("sum:%d"%sum);
 '''
 '''
 ls = [10,20,30,40];Sum = 0;
@@ -19,34 +19,34 @@ Sum = ls[0]+ls[1]+ls[2]+ls[3];
 print("Sum :",Sum);
 '''
 '''
-#리스트를 이렇게 사용하면 X ,비효율적임 쓸데없이 길다
+#Inefficient list code
 ls = [0,0,0,0]; Sum=0;
-ls[0]=int(input("첫번째 숫자 입력:"));
-ls[1]=int(input("두번째 숫자 입력:"));
-ls[2]=int(input("세번째 숫자 입력:"));
-ls[3]=int(input("네번째 숫자 입력:"));
+ls[0]=int(input("Enter first number:"));
+ls[1]=int(input("Enter second number:"));
+ls[2]=int(input("Enter third number:"));
+ls[3]=int(input("Enter fourth number:"));
 Sum=ls[0]+ls[1]+ls[2]+ls[3];
 print("ls[0]:%d"%ls[0]);
 print("ls[1]:%d"%ls[1]);
 print("ls[2]:%d"%ls[2]);
 print("ls[3]:%d"%ls[3]);
-print("리스트의 합:%d"%Sum);
+print("Sum of lists:%d"%Sum);
 '''
 '''
 ls = [0,0,0,0]; Sum=0;
 print("len(ls):",len(ls));
 for i in range(len(ls)):
-    ls[i]=int(input(str(i)+"째 숫자 입력:"));
+    ls[i]=int(input(str(i)+" Enter number:"));
     Sum += ls[i];
 for i in range(len(ls)):
     print("ls[%d]:%d"%(i,ls[i]));
-print("리스트의 합:%d"%Sum);
+print("Sum of lists:%d"%Sum);
 '''
 '''
 ls = [0,0,0,0];
 Sum , i = 0 , 0;
 while i<len(ls):
-    ls[i]=int(input(str(i)+"번째 숫자 입력:"));
+    ls[i]=int(input(str(i)+" Enter number:"));
     Sum += ls[i];
     i += 1;
 else:
@@ -54,14 +54,14 @@ else:
 while i<len(ls):
     print("ls[%d]:%d"%(i,ls[i]));
     i += 1;
-print("리스트의 합:%d"%Sum);
+print("Sum of lists:%d"%Sum);
 '''
 '''
 ls = [10,20,30,40];
 print("ls:",ls);
 print("\nls[1:3] => ls[1]~[2]:%s"%ls[1:3]);
 print("ls[0:3] => ls[0]~[2]:%s"%ls[0:3]);
-print("ls[2:] => ls[2]~[끝까지]:%s"%ls[2:]);
+print("ls[2:] => ls[2]~[end]:%s"%ls[2:]);
 print("ls[:2] => ls[0]~[1]:%s"%ls[:2]);
 '''
 '''
@@ -126,15 +126,15 @@ for i in range(len(string)):
 print("ls * 3 => string:",string);
 '''
 '''
-#선택 정렬 코드
+#Selection sort code
 ls = [4,8,2,7,6];
 i,j = 0,0;
-print("정렬 전",ls);
+print("Before sort",ls);
 for i in range(4):
     for j in range(i+1,5):
         if ls[i] > ls[j]:
             ls[i],ls[j] = ls[j],ls[i]; #ls[i]와 ls[j]를 교환
-print("정렬 후",ls);
+print("After sort",ls);
 '''
 '''
 jumSu = [82,85,76,79,96]
@@ -145,7 +145,7 @@ for i in range(5):
         if jumSu[i] < jumSu[j]:
             rank[i]+=1
 i=0
-print("점수\t등수")
+print("Score\tRank")
 while i<5:
     print(jumSu[i],"\t",rank[i])
     i+=1
@@ -155,10 +155,10 @@ ls = [10,20,30];
 ls.append(1000);
 for i in range(0,4):
     print("ls[%d]:%d"%(i,ls[i]));
-print("리스트의 총 개수:",len(ls));
+print("Total number of lists:",len(ls));
 print("ls:",ls);
 ls=[];
-print("ls 초기화 후:",ls);
+print("ls after initializing:",ls);
 '''
 '''
 ls = [];
@@ -166,15 +166,15 @@ for i in range(0,4):
     ls.append(0);
 Sum = 0;
 for i in range(0,len(ls)):
-    ls[i] = int(input(str(i+1) + "번째 숫자:"));
+    ls[i] = int(input(str(i+1) + " Enter number:"));
     Sum += ls[i];
 for i in range(0,len(ls)):
-    print("입력 받은 값 ls[%d] : %d"%(i,ls[i]));
-print("합 계:%d"%Sum);
+    print("Enter value ls[%d] : %d"%(i,ls[i]));
+print("Sum:%d"%Sum);
 '''
 '''
 bb = [10,20,30];
-cc = ["파이썬","run","test"];
+cc = ["Python","run","test"];
 dd = [10,"test",1.123];
 for i in range(0,len(bb)):
     print("bb[%d] : %s"%(i,bb[i]),end="=>");
@@ -190,37 +190,37 @@ for i in range(0,len(dd)):
 '''
 '''
 List = [30,20,10];
-print("현재 리스트:%s"%List);
+print("Current list : %s"%List);
 
 List.append(40);
-print("attend(40) 후의 리스트:%s"%List);
+print("List after attend(40) : %s"%List);
 
-print("pop()으로 추출한 값:%s"%List.pop());
-print("pop()후의 리스트 : %s"%List);
+print("value extracted by pop() : %s"%List.pop());
+print("List after pop() : %s"%List);
 
 List.sort();
-print("sort() 후의 리스트:%s"%List);
+print("List after sort() : %s"%List);
 
 List.reverse();
-print("reverse() 후의 리스트:%s"%List);
+print("List after reverse() : %s"%List);
 del(List[2]);
-print("del() 후의 리스트:%s"%List);
+print("List after del() : %s"%List);
 '''
 '''
 List = [30,20,10];
-print("현재 리스트:%s"%List);
-print("10 값의 위치:%d"%List.index(10));
+print("Current list : %s"%List);
+print("Location of 10 value : %d"%List.index(10));
 
 List.insert(2,200);
-print("insert(2,200) 후의 리스트:%s"%List);
+print("List after insert(2,200) : %s"%List);
 
 List.remove(200);
-print("remove(200) 후의 리스트:%s"%List);
+print("List after remove(200) : %s"%List);
 
 List.extend([555,666,555]);
-print("extend([555,666,555])후의 리스트:%s"%List);
+print("List after extend([555,666,555]) : %s"%List);
 
-print("555 값의 개수:%d"%List.count(555));
+print("555 value counts : %d"%List.count(555));
 '''
 '''
 aa = [[1,2,3,4,],[5,6,7,8],[9,10,11,12]];

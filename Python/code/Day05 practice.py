@@ -1,19 +1,21 @@
 '''
-#10 ~ 20 숫자를 입력 받아 1 부터 입력 받은 수 까지의 합 출력
+#Enter 10 to 20 number and output from 1 to the number of input
 num, result, i = 0, 0, 1
 while True :
-    num = int(input("10~20사이의 숫자 입력 : "))
+    num = int(input("Enter number between 10 and 20 : "))
     if num < 10 or num > 20 :
-        print("잘못 입력 다시")
+        print("Incorrect input again")
         continue
     break
 while i <= num :
     result += i
     i += 1
 else:
-    print("1 ~",num,"까지의 합 : ",result)
-
-# 다음 for문을 while문으로 변경
+    print("the sum of 1 to",num,":",result)
+'''
+'''
+#Example problem
+#Change the for command below to while command
 #for i in range(0, 3, 1):
 #    for k in range(0, 5, 1):
 #        if k == 3:
@@ -28,41 +30,47 @@ while i < 3:
         print("(i : %d\tk : %d)"%(i, k))
         k+=1
     i+=1
-
-# 쥐먹이문제
+'''
+'''
+#Example problem
+#There are a pair of female and male rats in a warehouse where 100 kilograms of rice is stored.
+#A mouse eats 20 grams of rice a day, and every 10 days (10, 20, 30) the number of mice doubles.
+#Will all the rice in the warehouse be eaten by mice in a matter of days? And how many mice are there in total?
+#(Condition of doubling after eating rice)
 rice = 100000; mouse = 2; day=1;
 while rice>0:
     rice -= mouse*20
     if day%10 == 0:
         mouse *= 2
-    #print(day,"일차",mouse,"마리",rice,"그램")
     if rice <= 0:
         break
     day+=1
-print(day,'일',mouse,'마리')
-
-#자판기 문제
+print(day,'days',mouse,'mice')
+'''
+'''
+#Example problem
+#Vending machine
 money, j = 0, 0;
-money = int(input('요금을 투입 하세요 : '))
+money = int(input('Enter the charge : '))
 while True:
-    print("==========커피 자판기==========")
-    print("1. 커피(200)\t2. 코코아(250)\t3. 반환\t4. 종료")
-    print("남은 금액 :",money)
-    j = int(input("메뉴를 선택하세요 >>> "))
+    print("==========coffee, cocoa vending machine==========")
+    print("1. ceffee(200)\t2. cocoa(250)\t3. Return\t4. exit")
+    print("Remaining money :",money)
+    j = int(input("Please select a menu >>> "))
     if j == 4:
         break
     elif ((j == 1 and money < 200) or (j == 2 and money < 250)):
-        print("요금이 부족합니다\n")
+        print("There is not enough charge\n")
     elif j == 1:
-        print("맛있게 드세요\n")
+        print("Enjoy your drink.\n")
         money -= 200
     elif j == 2:
-        print("맛있게 드세요\n")
+        print("Enjoy your drink.\n")
         money -= 250
     elif j == 3:
-        print("반환 금액 :",money,"\n")
+        print("Return charge :",money,"\n")
         money = 0
     else:
-        print("잘못입력하셨습니다\n")
-print("프로그램 종료")
+        print("You've entered something wrong.\n")
+print("Program exit")
 '''

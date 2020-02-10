@@ -2,26 +2,26 @@
 num1 = 10;
 num2 = 15;
 if num1 > num2:
-    print("num1이 num2보다 크다");
+    print("Number 1 is larger than number 2.");
 '''
 '''
-num1 = int(input("수 입력:"));
+num1 = int(input("Enter num1:"));
 if num1 % 2 == 0:
-    print("num1 : ",num1,"짝수다");
-print("나는 다음 문장");
+    print("num1 : ",num1,"is even.");
+print("I am the next sentence.");
 '''
 '''
-num1 = int(input("수 입력:"));
+num1 = int(input("Enter num1:"));
 if num1 % 2 == 0:
-    print("num1 :",num1,"짝수다");
-    print("num1 :",num1,"2의 배수이다");
-print("나는 다음 문장");
+    print("num1 :",num1,"is even.");
+    print("num1 :",num1,"is a multiple of two.");
+print("I am the next sentence.");
 '''
 '''
 print("1.easy game");
 print("2.hard game");
 print("3.exit");
-num1 = int(input("선택 : "));
+num1 = int(input("select : "));
 if num1 == 1:
     print("easy game start");
 if num1 == 2:
@@ -30,156 +30,145 @@ if num1 == 3:
     print("game exit");
 '''
 '''
-#if문 문제 : 날짜를 입력받아 요일을 구하시오
-#(단, 1일은 무조건 월요일이다. 7일은 일요일, 8일은 다시 월요일)
-#(어떤 값을 입력을 받던 요일이 정확히 출력 되게 만드시오);
-num1 = int(input("날짜 입력 : "));
+#Example problem(if) : Enter a date and find the day
+#(However, the first day is definitely Monday. Sunday the 7th and Monday the 8th.)
+num1 = int(input("Enter Date : "));
 if num1 % 7 == 1:
-    print("월요일 입니다");
+    print("It’s Monday.");
 if num1 % 7 == 2:
-    print("화요일 입니다");
+    print("It's Tuesday.");
 if num1 % 7 == 3:
-    print("수요일 입니다");
+    print("It's Wednesday.");
 if num1 % 7 == 4:
-    print("목요일 입니다");
+    print("It's Thursday.");
 if num1 % 7 == 5:
-    print("금요일 입니다");
+    print("It's Friday.");
 if num1 % 7 == 6:
-    print("토요일 입니다");
+    print("It's Saturday.");
 if num1 % 7 == 0:
-    print("일요일 입니다");
+    print("It's Sunday.");
 '''
 '''
-num = int(input("수 입력 : "));
+num = int(input("Enter number : "));
 if num == 1:
-    print("1입력");
+    print("It's 1.");
 else:
-    print("1이 아닌 값 입력");
+    print("It's not 1.");
 '''
 '''
 arr = [1,2,3,4,5]; # 학습하지 않은 내용 : 리스트 C언어의 배열과 같음
-na = int(input("찾을 숫자 입력 : "));
+na = int(input("Enter numbers to find : "));
 if na in arr:
-    print("arr : ",arr,"찾는 숫자가 존재 합니다 : ",na);
+    print("arr : ",arr,na,"you are looking for exist");
 else:
-    print("arr : ",arr,"안에는 찾고자 하는 숫자가 없습니다 : ",na);
-print("결과 :",na in arr);
+    print("arr : ",arr,na,"you are looking for does not exist");
+print("Result :",na in arr);
 '''
 '''
 st = "Hello Python Fun";
-na = input("찾고자 하는 문자열 입력 : ");
+na = input("Enter the string you want to find : ");
 if na in st:
-    print("st:",st,"찾는 문자열:",na,"존재 한다");
+    print("st :",st,"\tSearch string :",na,"exist");
 else:
-    print("st 안에는",na,"존재 하지 않습니다");
+    print(na,"does not exist in st :",st);
 '''
 '''
-old_id = input("저장할 ID 입력 : ");
-print("인증 프로그램 입니다");
-print("ID와 PW를 입력하세요");
-new_id = input("ID 입력 : ");
+old_id = input("Enter ID to save : ");
+print("It's a certification program");
+print("Login");
+new_id = input("Enter ID : ");
 if old_id == new_id:
-    print("인증 통과 했습니다");
+    print("I passed the certification");
 else:
-    print("인증 실패");
+    print("certification failed");
 '''
 '''
-num = int(input("수 입력 : "));
+num = int(input("Enter num : "));
 if num % 3 == 0:
     if num % 2 == 0:
-        print("num은 3의 배수이면서 짝수 입니다");
-print("다음문장 실행");
+        print("num is a multiple of 3 and an even number");
+print("I am the next sentence.");
 '''
 '''
-num = int(input("수 입력 : "));
+num = int(input("Enter num : "));
 if num > 0:
     if num % 2 == 0:
-        print("num은 양의 짝수 입니다");
+        print("num is a positive even number");
     else:
-        print("num은 양의 홀수 입니다");
+        print("num is a positive odd number");
 else:
-    print("num은 음수 입니다");
-print("다음문장 실행");
+    print("num is a negative number");
+print("I am the next sentence.");
 '''
 '''
-num = int(input("수 입력 : "));
+num = int(input("Enter num : "));
 if num > 0:
-    print("0보다 큰 수 입력");
+    print("num is a positive number");
 elif num < 0:
-    print("0보다 작은 수 입력");
+    print("num is a negative number");
 else:
-    print("0과 같은 수 입력");
+    print("num is 0");
 '''
 '''
-#예시 코딩 문제 : 이름, 학번, 3과목의 성적을 입력 받아 합계와 평균을 구하고
-#평균이 90이상이면 “A”, 80 이상“B”, 70이상 “C”, 60이상 “D”, 60미만이면 “F”를 출력하시오
-name = input("이름 : ");
-number = (input("학번 : "));
-su1 = int(input("국어 점수 : "));
-su2 = int(input("수학 점수 : "));
-su3 = int(input("영어 점수 : "));
-sum = su1 + su2 + su3;
-avr = round(sum/3,2);
-print("=============== 결과 출력 ================");
-print("이름 :",name);
-print("학번 :",number);
-print("국어 점수 :",su1);
-print("수학 점수 :",su2);
-print("영어 점수 :",su3);
-print("합계 :",sum);
-print("평균 :",avr);
-if avr >= 90:
-    print("학점 : A");
-elif avr >= 80:
-    print("학점 : B");
-elif avr >= 70:
-    print("학점 : C");
-elif avr >= 60:
-    print("학점 : D");
+#Example Problem
+#Enter name, student number, score(Korean, English, Math) => print name, student number, average, grade
+#grade (average>=90 A, average>=80 B, average>=70 C, average>=60 D, average<60 F)
+name = input("Enter name : ")
+num = input("Enter student number : ")
+kor = int(input("Enter Korean score: "))
+eng = int(input("Enter English score: "))
+math = int(input("Enter Math score: "))
+sum = kor+eng+math
+avg = round(sum/3,2)
+print("=========== Result ===========")
+print("Name :",name)
+print("student number :",num)
+print("average :",avg)
+if avg >= 90:
+    print("grade : A")
+elif avg >= 80:
+    print("grade : B")
+elif avg >= 70:
+    print("grade : C")
+elif avg >= 60:
+    print("grade : D")
 else:
-    print("학점 : F");
+    print("grade : F")
 '''
 '''
-#예시 코딩 문제 : 커피의 개당 가격은 2000원이다. 10개 초과하면 초과하는 양에 대해서만 개당 1500원씩 받는다.
-#커피의 개수를 입력 받아 금액을 출력하시오.
-cnt = int(input("커피 잔 수?"));
+#Example Problem
+# coffee : 2000won (If you drink more than 10 cups, you'll get 1,500 won for the excess.)
+cnt=int(input("a few cups of coffee? "))
 if cnt <= 10:
-    prize1 = cnt * 2000;
-    print("커피 잔 수 :",cnt);
-    print("커피 가격 :",prize1);
+    price=cnt*2000
+    print("total price is",price,"won.")
 else:
-    prize2 = 2000 * 10;
-    prize3 = (cnt - 10) * 1500;
-    print("커피 잔 수 :",cnt);
-    print("커피 가격 :",prize2 + prize3);
+    price1 = 10*2000
+    price2 = (cnt-10)*1500
+    print("total price is",price1+price2,"won.")
 '''
 '''
-#정수를 입력받아 아래와 같이 출력하시오.
-#3의배수이면서, 4의배수입니다.
-#3의배수 입니다.
-#4의배수 입니다.
-#3의배수도, 4의배수도 아닙니다.
-#0은 3의 배수도 4의 배수도 아닙니다.
-a = int(input("정수를 입력하세요 : "));
-if a == 0:
-    print("0은 3의 배수도 4의 배수도 아닙니다.");
-elif a % 3 == 0:
-    if a % 4 == 0:
-        print("3의배수이면서, 4의배수 입니다");
-    else:
-        print("3의배수 입니다");
-elif a % 4 == 0:
-    print("4의배수 입니다");
-else:
-    print("3의배수도, 4의배수도 아닙니다");
+#Example Problem
+num = int(input('Enter integer : '))
+if num==0: 
+	print(num,"is not a multiple of 3 or a multiple of 4.");
+elif num%3==0 and num%4==0: 
+	print(num,"is a multiple of 3 and a multiple of 4.");
+elif num%3==0:
+	print(num,"is a multiple of 3.");
+elif num%4==0:
+	print(num,"is a multiple of 4.");
+else: 
+	print(num,"is not a multiple of 3 or a multiple of 4.");
 '''
 '''
-#비행기를 타는데 30분 거리까지만 기본 요금은 30000원이며, 10분 단위로 추가요금 5000원씩 부가된다.
-#비행기 탈 시간을 입력하여 요금 계산기를 만드시오.
+#Example Problem
+#The basic fare is 30000 won only for a 30-minute flight, and an additional 5000 won will be added every 10 minutes.
+#Flight Fare Calculator
 money=30000;
-time = int(input("비행기 탄 시간(분): "))
+time = int(input("Time(minutes) on the plane: "))
 time-=30
 if time > 9:
     money=money+time//10*5000
-print(money,"원 입니다.")
+print(money,"won.")
 '''

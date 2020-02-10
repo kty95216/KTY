@@ -1,5 +1,5 @@
 /*
-//예시 코딩 문제 : 정수 2개 입력 , 입력받은 정수 2개를 서로 더해서 출력
+//Example problem : Outputs by entering 2 integers and adding 2 entered integers
 #include <stdio.h>
 
 int main()
@@ -15,14 +15,14 @@ int main()
 
 	result = x + y;
 
-	printf("두 수의 합 : %d + %d = %d", x, y, result);
+	printf("Sum of two numbers : %d + %d = %d", x, y, result);
 
 	return 0;
 }
 */
 
 /*
-//예시 코딩 문제 : 영문 대문자를 입력받아 영문 소문자로 출력
+//Example problem : Enter uppercase letters to print lowercase letters in English
 #include <stdio.h>
 
 int main()
@@ -30,16 +30,16 @@ int main()
 	char A;
 	char a;
 
-	printf("대문자 입력 : ");
+	printf("Enter uppercase letters : ");
 	scanf("%c", &A);
 	a = A + 32;
 
-	printf("%c의 소문자는 %c이다.\n", A, a);
+	printf("The lower case letter of %c is %c.\n", A, a);
 	return 0;
 }
 */
 
-//예시 코딩 문제 : 학생의 국어점수 , 영어점수 , 수학점수을 입력한 뒤 합계와 평균을 구하시오.
+//Example problem : Enter the student's Korean, English, and Math scores and get the sum and average.
 /*
 #include <stdio.h>
 
@@ -50,19 +50,19 @@ int main()
 	int class = 3;
 
 	printf("====================\n");
-	printf("  이 름 : 홍 길 동\n");
+	printf("NAME : Kim Tae Young  \n");
 	printf("====================\n");
-	printf(" 국 어 : ");
+	printf("Korean : ");
 	scanf("%d", &kor);
-	printf(" 영 어 : ");
+	printf("English : ");
 	scanf("%d", &eng);
-	printf(" 수 학 : ");
+	printf("Math : ");
 	scanf("%d", &math);
 	printf("====================\n");
 	sum = kor + eng + math;
 	avg = (float)sum / class;
-	printf(" 합 계 : %d\n", sum);
-	printf(" 평 균 : %.2f\n", avg);
+	printf("Sum : %d\n", sum);
+	printf("Average : %.2f\n", avg);
 	printf("====================\n");
 
 	return 0;
@@ -70,27 +70,27 @@ int main()
 */
 
 /*
-//예시 코딩 문제 : x가 양수인지 ? 음수인지 ? 0인지 ? 확인하는 프로그램 만드시오.
+//Example problem : Create a program that checks whether x is positive number or negative number or zero.
 #include <stdio.h>
 
 int main()
 {
 	int x;
 
-	printf("x를 입력 하세요 : ");
+	printf("Enter x : ");
 	scanf("%d",&x);
 
 	if (x > 0)
 	{
-		printf("x는 양수입니다.");
+		printf("x is a positive number.");
 	}
 	else if (x == 0)
 	{
-		printf("x는 0입니다.");
+		printf("x is zero");
 	}
 	else
 	{
-		printf("x는 음수입니다.");
+		printf("x is a negative number");
 	}
 
 	return 0;
@@ -98,28 +98,27 @@ int main()
 */
 
 /*
-//예시 코딩 문제 : 입력 받은 문자가 대문자이면 소문자출력 , 소문자이면 대문자출력 , 영문자가 아니면 ->영문자를 입력해주세요. 출력
-//and연산 명령어 질문 부호 한번에 2개 불가능 질문 조건부연산자도 참,거짓으로 판별?
+//Example problem : If the character you received is uppercase, print lowercase letters. If the character you received is lowercase, print uppercase letters. If the character you typed is not an alphabetic character, make it possible to enter again.
 #include <stdio.h>
 
 int main()
 {
 	char A;
 
-	printf("영문자를 입력 : ");
+	printf("Enter alphabetic character : ");
 	scanf("%c",&A);
 
 	if (65 <= A && A <= 90)
 	{
-		printf("%c의 소문자 : %c", A, A + 32);
+		printf("the lowercase letter of %c : %c", A, A + 32);
 	}
 	else if (97 <= A && A <= 122)
 	{
-		printf("%c의 대문자 : %c", A, A - 32);
+		printf("the uppercase letter of %c : %c", A, A - 32);
 	}
 	else
 	{
-		printf("영문자가 아니니 영문자를 다시 입력해주세요");
+		printf("It's not an English letter, so please re-enter the English characters.");
 	}
 
 	return 0;
@@ -127,7 +126,7 @@ int main()
 */
 
 /*
-// 예시 코딩 문제 : 1~9사이의 숫자 입력 , 해당 숫자의 구구단 출력
+//Example problem : Please enter a number between 1 and 9 and Print the multiplication table of the number you entered.
 #include <stdio.h>
 
 int main()
@@ -137,7 +136,7 @@ int main()
 
 	i = 1;
 
-	printf("1~9사이의 숫자를 입력하세요 : ");
+	printf("Please enter a number between 1 and 9 : ");
 	scanf("%d", &a);
 
 	while (i < 10)
@@ -179,7 +178,7 @@ int main()
 */
 
 /*
-//예시 코딩 문제 : 1~9사이의 숫자 입력 , 해당 숫자의 구구단 출력 , 1~9사이의 숫자가 아니면 다시입력할수 있도록
+//Example problem : If you enter a number between 1 and 9, the multiplication table of the entered number is output. If it's not between 1 and 9, make sure you enter it again.
 #include <stdio.h>
 
 int main()
@@ -190,7 +189,7 @@ int main()
 	i = 1;
 	do
 	{
-		printf("1~9사이의 숫자 : ");
+		printf("a number between 1 and 9 : ");
 		scanf("%d", &a);
 	}
 	while (!(1<=a&&a<=9));
@@ -205,7 +204,7 @@ int main()
 */
 
 /*
-//♨ 예시 코딩 문제 : *****\n*****\n*****\n*****\n***** 출력
+//Example problem : *****\n*****\n*****\n*****\n*****Output
 #include <stdio.h>
 
 int main()
@@ -224,7 +223,7 @@ int main()
 */
 
 /*
-//♨ 예시 코딩 문제 : *\n**\n***\n****\n***** 출력
+//Example problem : *\n**\n***\n****\n*****Output
 #include <stdio.h>
 
 int main()
@@ -266,7 +265,7 @@ int main()
 */
 
 /*
-//예시 코딩 문제 : 정수 입력 , 입력받은 정수를 모두 더해주는 프로그램(0을 입력받는 즉시 프로그램 종료)
+//Example problem : If you enter an integer, the program adds all the integers you have entered(terminate the program as soon as you receive 0)
 #include <stdio.h>
 
 int main()
@@ -276,7 +275,7 @@ int main()
 
 	while (1)
 	{
-		printf("정수 입력 (0:종료) : ");
+		printf("Enter an integer (0:End) : ");
 		scanf("%d", &n);
 		if (n == 0)
 		{
@@ -284,13 +283,13 @@ int main()
 		}
 		sum += n;
 	}
-	printf("총 합 : %d\n", sum);
+	printf("Sum : %d\n", sum);
 	return 0;
 }
 */
 
 /*
-//예시 코딩 문제 : +,-,*,/ 연산자를 사용하여 코드를 작성 , 연산자에 q를 입력 받기 전까지 프로그램을 종료하지 않는다. 계산기 프로그램
+//Example problem : +,-,*,/ use operators to write code and do not exit the program until you receive operator "q". Calculator Program
 #include <stdio.h>
 
 int main()
@@ -300,34 +299,34 @@ int main()
 
 	while (1)
 	{
-		printf("=== 계산기 프로그램 ===\n");
-		printf("연산자 입력 (+,-,*,/) : ");
+		printf("===Calculator Program===\n");
+		printf("Enter Operator(+,-,*,/) : ");
 		scanf(" %c", &c);
 		if (c == 113)
 		{
-			printf("프로그램을 종료합니다.");
+			printf("Exit the program.");
 			break;
 		}
-		printf("첫 번째 숫자 입력 : ");
+		printf("Enter the first number : ");
 		scanf("%d", &a);
-		printf("두 번째 숫자 입력 : ");
+		printf("Enter the second number : ");
 		scanf("%d", &b);
 		switch (c)
 		{
 		case 43:
-			printf("====== 결 과 ======\n");
+			printf("====== Result ======\n");
 			printf("%d %c %d = %d\n\n", a, c, b, a + b);
 			break;
 		case 45:
-			printf("====== 결 과 ======\n");
+			printf("====== Result ======\n");
 			printf("%d %c %d = %d\n\n", a, c, b, a - b);
 			break;
 		case 42:
-			printf("====== 결 과 ======\n");
+			printf("====== Result ======\n");
 			printf("%d %c %d = %d\n\n", a, c, b, a * b);
 			break;
 		case 47:
-			printf("====== 결 과 ======\n");
+			printf("====== Result ======\n");
 			printf("%d %c %d = %.2f\n\n", a, c, b, (float)a / b);
 			break;
 		}
@@ -337,7 +336,7 @@ int main()
 */
 
 /*
-//예시 코딩 문제 : 동전 앞 뒤 맞추기 , 1 or 2의 랜덤 수를 추출 한 뒤 사용자가 입력한 값과 비교
+//Example problem : coin front, back matching game
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -353,23 +352,23 @@ int main()
 
 	n = rand() % 2;
 	printf("com = %d\n", n);
-	printf("동전 앞 뒤 맞추기\n");
-	printf("입력 하세요 (0.앞면, 1.뒷면) : ");
+	printf("Coin front, back matching game\n");
+	printf("Enter(0.front, 1.back) : ");
 	scanf("%d", &coin);
 	if (n == coin)
 	{
-		printf("맞췄습니다.^^");
+		printf("That's right^^");
 	}
 	else
 	{
-		printf("틀렸습니다.ㅠㅠ");
+		printf("Incorrect");
 	}
 	return 0;
 }
 */
 
 /*
-//예시 코딩 문제 : 컴퓨터와 가위 바위 보 게임 프로그램 제작
+//Example problem : Rock Paper Scissor game program production
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -386,51 +385,51 @@ int main()
 	while (1) {
 		com = rand() % 3 + 1;
 
-		printf("=== 가위 바위 보 게임 ===\n");
-		printf("숫자를 선택하세요(1.가위/2.바위/3.보/4,프로그램 종료) : ");
+		printf("=== Rock Paper Scissor game ===\n");
+		printf("Please select a number(1.Scissor/2.Rock/3.Paper/4.program end) : ");
 		scanf("%d", &my);
 		if (my == 4)
 		{
-			printf("프로그램을 종료합니다\n");
+			printf("Exit the program\n");
 			break;
 		}
-		printf("======== 결과 ===========\n");
+		printf("======== Result ===========\n");
 		if (my == 1)
 		{
-			printf("당신은 가위를 냈습니다.\n");
+			printf("User : Scissor\n");
 		}
 		else if (my == 2)
 		{
-			printf("당신은 바위를 냈습니다.\n");
+			printf("User : Rock\n");
 		}
 		else if (my == 3)
 		{
-			printf("당신은 보를 냈습니다.\n");
+			printf("User : Paper\n");
 		}
 		if (com == 1)
 		{
-			printf("컴퓨터는 가위를 냈습니다.\n");
+			printf("Computer : Scissor\n");
 		}
 		else if (com == 2)
 		{
-			printf("컴퓨터는 바위를 냈습니다.\n");
+			printf("Computer : Rock\n");
 		}
 		else if (com == 3)
 		{
-			printf("컴퓨터는 보를 냈습니다.\n");
+			printf("Computer : Paper\n");
 		}
 		printf("========================\n");
 		if (com == my)
 		{
-			printf("비겼습니다.\n\n");
+			printf("draw\n\n");
 		}
 		else if (((com == 1) && (my == 2)) || ((com == 2) && (my == 3)) || ((com == 3) && (my == 1)))
 		{
-			printf("유저가 이겼습니다.^^\n\n");
+			printf("User Win^^\n\n");
 		}
 		else if (((com == 1) && (my == 3)) || ((com == 2) && (my == 1)) || ((com == 3) && (my == 2)))
 		{
-			printf("컴퓨터가 이겼습니다.ㅠ.ㅠ\n\n");
+			printf("Computer Win\n\n");
 		}
 	}
 	return 0;
@@ -438,7 +437,7 @@ int main()
 */
 
 /*
-//예시 코딩 문제 : UP & Down Game (컴퓨터는 1~99의 랜덤한 숫자를 맞추는 게임) , Game Score는 최단기록 출력
+//Example problem : UP & Down Game (a game of matching random numbers between 1 and 99), Game Score is the shortest recorded output
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -468,7 +467,7 @@ int main()
 			count = 0;
 			while (1)
 			{
-				printf("\ninput number : ");
+				printf("\nEnter a number : ");
 				scanf("%d", &ply);
 				count++;
 				if (com > ply)
@@ -481,10 +480,10 @@ int main()
 				}
 				else
 				{
-					printf("<<  정  답  >>\n\n");
+					printf("<<  Right Answer  >>\n\n");
 					if (score == 0 || score > count)
 					{
-						printf("신기록!!!\n\n");
+						printf("new record!!!\n\n");
 						score = count;
 					}
 					break;
@@ -492,10 +491,10 @@ int main()
 			}
 			break;
 		case 2:
-			printf("당신의 최단 기록은 %d번 입니다.\n\n", score);
+			printf("Your shortest record is %d.\n\n", score);
 			break;
 		case 3:
-			printf("프로그램을 종료합니다.\n");
+			printf("Exit the program.\n");
 			return 0;
 			break;
 		}
@@ -505,7 +504,7 @@ int main()
 */
 
 /*
-//예시 코딩 문제 : Baskin Robbins 31 Game 제작 , 1 ~ 31 순차적으로 2사람이 외침 , 31외치면 패배 , 한명당 최대 3번까지 숫자를 외칠수 있음 , 컴퓨터 인공지능 높이기
+//Example problem : Baskin Robbins 31 Game (2 people shout in a sequence of 1 to 31, If you shout 31 defeat, you can shout up to 3 times per person, increase computer AI)
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -543,7 +542,7 @@ int main()
 					printf("%d!\n", baskin);
 					if (baskin == 31)
 					{
-						printf("\n나의 패배\n\n");
+						printf("\nMy defeat\n\n");
 						flag = 1;
 						lose++;
 						break;
@@ -569,7 +568,7 @@ int main()
 					}
 					if (baskin == 31)
 					{
-						printf("\n나의 승리\n\n");
+						printf("\nMy victory\n\n");
 						flag = 1;
 						win++;
 						break;
@@ -597,7 +596,7 @@ int main()
 */
 
 /*
-// 예시 코딩 문제 : 정수 2개 입력 받아 , 더해서 반환해 주는 함수 , 나눈후 실수로 반환
+//Example problem : (1)add function (2)A function that returns a real number after division
 #include <stdio.h>
 
 int f(int A, int B)
@@ -693,7 +692,7 @@ int main()
 */
 
 /*
-//예시 코딩 문제 : 대소문자 섞인 문자열을 전부 소문자로 전부 대문자로 각각 변환
+//Example problem : Convert uppercase letters to lowercase and lowercase letters to uppercase in mixed-case strings
 #include <stdio.h>
 
 int main()
@@ -702,7 +701,7 @@ int main()
 	int i;
 
 	printf("string = %s\n", string);
-	printf("소문자로 변환\n");
+	printf("Convert to lowercase\n");
 	for (i = 0; i < sizeof(string); i++)
 	{
 		if ('A' <= string[i] && string[i] <= 'Z')
@@ -711,7 +710,7 @@ int main()
 		}
 	}
 	printf("string = %s\n", string);
-	printf("대문자로 변환\n");
+	printf("Convert to uppercase\n");
 	for (i = 0; i < sizeof(string); i++)
 	{
 		if ('a' <= string[i] && string[i] <= 'z')
@@ -725,12 +724,12 @@ int main()
 */
 
 /*
-//예시 코딩 문제
+//Example problem
 #include <stdio.h>
 
 int main()
 {
-	char string[] = "Reverse";	//선언과 동시에 값을 입력해주면 변수의갯수 생략가능
+	char string[] = "Reverse";
 	char tmp;
 	int i, j;
 
@@ -749,7 +748,7 @@ int main()
 */
 
 /*
-//버블정렬을 사용하여 오름차순으로 정렬
+//Example problem : Ascending Bubble Sort
 #include <stdio.h>
 
 int main()

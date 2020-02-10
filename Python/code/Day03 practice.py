@@ -1,53 +1,63 @@
 '''
-#이름, 학번, 점수3개 입력 > 이름, 학번, 평균, 학점출력
-#학점은 90이상 A, 80이상 B, 70이상 C, 60이상 D, 나머지 F
-name = input("이름 입력 : ")
-num = input("학번 입력 : ")
-kor = int(input("국어 점수 : "))
-eng = int(input("영어 점수 : "))
-math = int(input("수학 점수 : "))
+#Example Problem
+#Enter name, student number, score(Korean, English, Math) => print name, student number, average, grade
+#grade (average>=90 A, average>=80 B, average>=70 C, average>=60 D, average<60 F)
+name = input("Enter name : ")
+num = input("Enter student number : ")
+kor = int(input("Enter Korean score: "))
+eng = int(input("Enter English score: "))
+math = int(input("Enter Math score: "))
 sum = kor+eng+math
 avg = round(sum/3,2)
-print("=========== 결과 출력 ===========")
-print("이름 :",name)
-print("학번 :",num)
-print("평균 :",avg)
+print("=========== Result ===========")
+print("Name :",name)
+print("student number :",num)
+print("average :",avg)
 if avg >= 90:
-    print("학점 : A")
+    print("grade : A")
 elif avg >= 80:
-    print("학점 : B")
+    print("grade : B")
 elif avg >= 70:
-    print("학점 : C")
+    print("grade : C")
 elif avg >= 60:
-    print("학점 : D")
+    print("grade : D")
 else:
-    print("학점 : F")
-#커피 1잔 2000원, 10잔 넘어가면 초과분에 대해서만 1500원
-cnt=int(input("커피 몇 잔? "))
+    print("grade : F")
+'''
+'''
+#Example Problem
+# coffee : 2000won (If you drink more than 10 cups, you'll get 1,500 won for the excess.)
+cnt=int(input("a few cups of coffee? "))
 if cnt <= 10:
-    prize=cnt*2000
-    print("총 금액은",prize,"원 입니다.")
+    price=cnt*2000
+    print("total price is",price,"won.")
 else:
-    prize1 = 10*2000
-    prize2 = (cnt-10)*1500
-    print("총 금액은",prize1+prize2,"원 입니다.")
-num = int(input('정수 입력 : '))
-# 3번
+    price1 = 10*2000
+    price2 = (cnt-10)*1500
+    print("total price is",price1+price2,"won.")
+'''
+'''
+#Example Problem
+num = int(input('Enter integer : '))
 if num==0: 
-	print(num,"은(는) 3의 배수도 4의 배수도 아닙니다");
+	print(num,"is not a multiple of 3 or a multiple of 4.");
 elif num%3==0 and num%4==0: 
-	print(num,"은(는)3의 배수 이면서,4의 배수입니다");
+	print(num,"is a multiple of 3 and a multiple of 4.");
 elif num%3==0:
-	print(num,"은(는)3의 배수 입니다");
+	print(num,"is a multiple of 3.");
 elif num%4==0:
-	print(num,"은(는)4의 배수 입니다");
+	print(num,"is a multiple of 4.");
 else: 
-	print(num,"는 3의 배수도 4의 배수도 아님");
-#4번
+	print(num,"is not a multiple of 3 or a multiple of 4.");
+'''
+'''
+#Example Problem
+#The basic fare is 30000 won only for a 30-minute flight, and an additional 5000 won will be added every 10 minutes.
+#Flight Fare Calculator
 money=30000;
-time = int(input("비행기 탄 시간(분): "))
+time = int(input("Time(minutes) on the plane: "))
 time-=30
 if time > 9:
     money=money+time//10*5000
-print(money,"원 입니다.")
+print(money,"won.")
 '''

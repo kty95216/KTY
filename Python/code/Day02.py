@@ -1,27 +1,27 @@
 '''
-print("정수 형 상수 사용 : %d"%300);
+print("Use integer type as constant : %d"%300);
 num=300
-print("정수 형 변수 사용 : %d 입니다"%num);
-print("정수 형 변수 사용 :",num,"입니다");
+print("Use integer type as variable : %d 입니다"%num);
+print("Use integer type as variable :",num,"입니다");
 '''
 '''
 num=5
-print("변경 전 num :",num);
+print("Before the change num :",num);
 num=num+10
-print("변경 후 num :",num);
+print("After the change num :",num);
 '''
 '''
 num1=5
 num2=10
 sum=num1+num2
-print("두 수의 합 :",sum);
-print("평균 값 :",sum/2);
+print("sum of two numbers :",sum);
+print("average value :",sum/2);
 '''
 '''
 num1=5
 num2=10
 sum = num1+num2
-print("id num1 :",id(num1));    id명령어 : 변수 설정한 주소 값 불러옴
+print("id num1 :",id(num1));    #id명령어 : 변수 설정한 주소 값 불러옴
 print("id num2 :",id(num2));
 print("id sum :",id(sum));
 '''
@@ -32,10 +32,10 @@ sum = num1 + num2;
 sub = num1 - num2;
 mul = num1 * num2;
 div = num1 / num2;
-print("더하기\t:",sum);
-print("빼기\t:",sub);
-print("곱하기\t:",mul);
-print("나누기\t:",div);
+print("Addition\t:",sum);
+print("Subtraction\t:",sub);
+print("Multiplication\t:",mul);
+print("Division\t:",div);
 '''
 '''
 flt = 123.567
@@ -47,7 +47,7 @@ print("round(flt,2) :",round(flt,2)); # %.2f
 flt = 123.123;
 print("%.3f + %.3f = %.3f"%(flt,321.321,flt+321.321));
 print(flt,"+",321.321,"=",flt+321.321);
-ch1,ch2,ch3="파",'2',"썬";
+ch1,ch2,ch3="P",'Y',"T";
 print("%c + %c +%c = %s"%(ch1,ch2,ch3,ch1+ch2+ch3));
 print(ch1,"+",ch2,"+",ch3,"=",ch1+ch2+ch3);
 str_1 = "python";str_2="test";
@@ -93,7 +93,7 @@ print(str(su)+num); #str(su): su숫자형을 str형으로 변경
 print(su+int(num)); #int(num): num문자형을 int형으로 변경
 '''
 '''
-su = 100;   #형변환 문제
+su = 100;   #Shape conversion problem
 print('type(su) :',type(su));
 print('type(str(su)) :',type(str(su)));
 print('type(float(su)) :',type(float(su)));
@@ -107,23 +107,23 @@ print(float(num)+float(flt));
 print(str(su)+num);
 '''
 '''
-print("숫자 입력");
+print("Enter a number");
 num1 = input();
-print("입력 받은 값 :",num1);
+print("input value :",num1);
 '''
 '''
-print("두 수의 합을 구해 줍니다");
-print("두 수 입력");
+print("Example Problem : sum of two numbers");
+print("Enter two numbers");
 num1 = input();
 num2 = input();
 num3 = num1 + num2;
-print("두 수의 합",num1,"+",num2,"=",num3);
+print("sum of two numbers",num1,"+",num2,"=",num3);
 print(type(num1), type(num2));  #input 명령어는 무조건 str형태로 입력받음
 '''
 '''
-#input의 형변환
-num1 = int(input());    #input의 str형태를 int형으로 형변환
-num2 = int(input());    #input의 str형태를 int형으로 형변환
+#type conversion of input
+num1 = int(input());    #input의 str형태를 int형으로 형변환 (str -> int)
+num2 = int(input());    #input의 str형태를 int형으로 형변환 (str -> int)
 
 result = num1 + num2;
 print(num1,"+",num2,"=",result);
@@ -138,35 +138,35 @@ result = num1 / num2
 print(num1,"/",num2,"=",result);
 '''
 '''
-#형변환 형태 확인
-print("문자열 입력");
+#Check type of type conversion
+print("Enter String");
 name = input();
-print("정수 입력");
+print("Enter integer");
 age = int(input());
-print("실수 입력");
+print("Enter real number");
 flt = float(input());
 
-print("name 값:",name,"\t type:",type(name));
-print("age 값:",age,"\t type:",type(age));
-print("flt 값:",flt,"\t type:",type(flt));
+print("name Value:",name,"\t type:",type(name));
+print("age Value:",age,"\t type:",type(age));
+print("flt Value:",flt,"\t type:",type(flt));
 '''
 '''
-name = input("이름을 입력 하세요:");
-age = int(input("나이를 입력 하세요:"));
-addr = input("주소를 입력 하세요:");
-print("이름:",name,"\n나이:",age,"\n주소:",addr);
+name = input("Enter name:");
+age = int(input("Enter age:"));
+addr = input("Enter address:");
+print("name:",name,"\nage:",age,"\naddress:",addr);
 '''
 '''
-#input() 함수의 예시 코딩 문제
-name = input("학생 이름 : ");
-A = int(input("국어 점수 : "));
-B = int(input("영어 점수 : "));
-C = int(input("수학 점수 : "));
+#Example Problem : input() function
+name = input("Student name : ");
+A = int(input("Korean score : "));
+B = int(input("English score : "));
+C = int(input("Math score : "));
 sum = A + B + C;
 avr = round(sum/3,2);
 
-print("====================학생 정보====================");
-print("이름\t 국어\t 영어\t 수학\t 합계\t 평균\t");
+print("====================Student Information====================");
+print("NAME\t KOREAN\t ENGLISH\t MATH\t SUM\t AVERAGE\t");
 print(name,"\t",A,"\t",B,"\t",C,"\t",sum,"\t",avr);
 '''
 '''
@@ -227,19 +227,19 @@ print("not:",not 1,":",not True);
 '''
 num1 = 3;
 num2 = 5;
-result = num1 | num2; #3 : 011 , 5 : 101 --> 7 : 111
+result = num1 | num2; #3 = 011 , 5 = 101 --> 7 = 111
 print(result);
 '''
 '''
 num1 = 3;
 num2 = 5;
-result = num1 & num2; #3 : 011 , 5 : 101 --> 1 : 001
+result = num1 & num2; #3 = 011 , 5 = 101 --> 1 = 001
 print(result);
 '''
 '''
 num1 = 3;
 num2 = 5;
-result = num1 ^ num2 #xor : 입력 값 두개가 다른 경우에만 1 , 3 : 011 , 5 : 101 --> 6 : 110
+result = num1 ^ num2 #xor : 입력 값 두개가 다른 경우에만 1 나머지는 0 (3 = 011 , 5 = 101 --> 6 = 110)
 print(result);
 '''
 '''
