@@ -5,10 +5,10 @@ public class Shape
 	
 	public void draw()
 	{
-		System.out.println("도형을 그려봅시다");
+		System.out.println("Let's draw a figure");
 	}
 	public void print() 
 	{
-		System.out.println("나는야 Shape의 Print다!!!!!");
+		System.out.println("I'm Shape's Print!!!!!");
 	}
 }

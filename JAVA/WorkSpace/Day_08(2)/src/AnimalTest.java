@@ -4,9 +4,9 @@ public class AnimalTest
 	public static void main(String[] args) 
 	{
 		Animal[] animals = new Animal[3];
-		animals[0] = new Goat("아기염소");
-		animals[1] = new Cow("황소");
-		animals[2] = new Chicken("호식이");
+		animals[0] = new Goat("Baby goat");
+		animals[1] = new Cow("Bull");
+		animals[2] = new Chicken("Hosik");
 		
 		//부모클래스의 타입으로 자식객체를 참조했을 때는 부모클래스에 존재하는 멤버변수와 멤버함수에만 접근이 가능함. 자식영역에만 존재하는 멤버에는 접근 불가능
 		//animals[2].setFried(true);
@@ -20,11 +20,11 @@ public class AnimalTest
 		
 		if(animals[0] instanceof Chicken)
 		{
-			System.out.println("animals[0]은 치킨이야");
+			System.out.println("animals[0] is Chicken");
 		}
 		if(animals[2] instanceof Chicken)
 		{
-			System.out.println("animals[2]는 치킨이다");
+			System.out.println("animals[2] is Chicken");
 		}
 		if(animals[2] instanceof Chicken)
 		{

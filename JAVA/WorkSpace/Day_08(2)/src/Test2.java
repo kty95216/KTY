@@ -11,8 +11,8 @@ public class Test2
 		}
 		catch (ArrayIndexOutOfBoundsException e) 
 		{
-			System.out.println("catch문");
+			System.out.println("catch statement");
 		}
-		System.out.println("프로그램 종료");
+		System.out.println("Exit program");
 	}
 }

@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Add2
+{
+	public static void main(String[] args)
+	{
+		Scanner input = new Scanner(System.in);
+		
+		int x;
+		int y;
+		int sum;
+		
+		System.out.println("Enter the first value: ");
+		x = input.nextInt();
+		System.out.println("Enter the second value: ");
+		y = input.nextInt();
+		
+		sum = x + y;
+		
+		System.out.println("x + y = " + sum);
+	}
+}

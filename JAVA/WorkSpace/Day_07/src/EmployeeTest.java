@@ -5,12 +5,12 @@ public class EmployeeTest
 	{
 		Employee e1, e2, e3;
 		
-		e1 = new Employee("철수", 35000);
-		e2 = new Employee("영희", 40000);
-		e3 = new Employee("민상", 50000);
+		e1 = new Employee("Min Su", 35000);
+		e2 = new Employee("Young Hee", 40000);
+		e3 = new Employee("Min Sang", 50000);
 		
 		int n = Employee.getCount();
-		System.out.println("현재 직원 수 : " + n);
+		System.out.println("Current number of employees : " + n);
 		
 		System.out.println(e1);
 		e1 = null;		//객체의 주소값 없앰 , stack영역의 값이 null (주소값이 null) , heap영역의 데이터는 아직 살아있음
@@ -23,6 +23,6 @@ public class EmployeeTest
 		System.runFinalization();	//일해라!!!
 		
 		n = Employee.getCount();
-		System.out.println("2현재 직원 수 : " + n);
+		System.out.println("2 Current number of employees : " + n);
 	}
 }

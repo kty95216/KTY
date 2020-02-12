@@ -8,13 +8,13 @@ public class homework1
 		Scanner input = new Scanner(System.in);
 		int result;
 		
-		System.out.print("첫번째 정수 입력하세요 : ");
+		System.out.print("Enter first integer: ");
 		num1 = input.nextInt();
-		System.out.print("두번째 정수 입력하세요 : ");
+		System.out.print("Enter second integer: ");
 		num2 = input.nextInt();
 		
 		result = num1 > num2 ? num1 : num2;
 		
-		System.out.println("더 큰 숫자는 : " + result + "이다.");
+		System.out.println("The larger number is " + result);
 	}
 }

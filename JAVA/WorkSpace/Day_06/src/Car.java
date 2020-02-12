@@ -1,11 +1,11 @@
 
 public class Car {
-	//상태 : 속도, 색상, 주행거리
+	//Status : Speed, Color, Mileage
 	int speed;
 	String color;
 	int mileage;
 	
-	//기능 : 가속, 감속, 현재상태 출력
+	//Function : Acceleration, Deceleration, Current state (print)
 	public void speedUp(int s)
 	{
 		speed += s;
@@ -16,9 +16,9 @@ public class Car {
 	}
 	public void print()
 	{
-		System.out.println("현재속도 : " + speed);
-		System.out.println("색     상 : " + color);
-		System.out.println("주행거리 : " + mileage);
+		System.out.println("Current speed : " + speed);
+		System.out.println("Color : " + color);
+		System.out.println("Mileage : " + mileage);
 	}
 
 }

@@ -4,17 +4,17 @@ public class homework2
 {
 	public static void main(String[] args) 
 	{
-		//2번, 3개 정수 입력받아서, 가장큰 수
+		//Program to find the largest number by inputting 3 integers
 		
 		Scanner input = new Scanner(System.in);//입력받을 스캐너
 		int num1, num2, num3; //3개의 정수 저장할 변수
 		int result; //결과값
 		
-		System.out.print("첫번째 정수 입력하세요 : ");
+		System.out.print("Enter first integer: ");
 		num1 = input.nextInt();
-		System.out.print("두번째 정수 입력하세요 : ");
+		System.out.print("Enter second integer: ");
 		num2 = input.nextInt();
-		System.out.print("세번째 정수 입력하세요 : ");
+		System.out.print("Enter third integer: ");
 		num3 = input.nextInt();
 		
 		//num1과 num2중 큰 수를 result에 저장

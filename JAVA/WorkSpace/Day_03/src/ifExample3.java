@@ -11,17 +11,17 @@ public class ifExample3
 		System.out.println(num1);
 		
 		if(num1 == 1)
-			System.out.println("1나옴");
+			System.out.println("1 Out");
 		else if(num1 == 2)
-			System.out.println("2나옴");
+			System.out.println("2 Out");
 		else if(num1 == 3)
-			System.out.println("3나옴");
+			System.out.println("3 Out");
 		else if(num1 == 4)
-			System.out.println("4나옴");
+			System.out.println("4 Out");
 		else if(num1 == 5)
-			System.out.println("5나옴");
+			System.out.println("5 Out");
 		else
-			System.out.println("6나옴");
+			System.out.println("6 Out");
 				
 	}
 }

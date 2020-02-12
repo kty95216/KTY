@@ -5,7 +5,7 @@ public class fortest
 	{
 		for (int i = 0 ; i<5 ; i++)
 		{
-			System.out.println("i의 값은 : " + i);
+			System.out.println("The value of i is " + i);
 		}
 	}
 }

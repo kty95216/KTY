@@ -14,20 +14,20 @@ public class StructTest
 		student s = new student(); //student타입의 데이터를 생성 (s에는 주소값이 담겨있다.)
 		s.age = 10;
 		s.score = 100;
-		s.name = "학생1";
+		s.name = "Student 1";
 		System.out.println(s);
 		
-		System.out.println("나이 : " + s.age);
-		System.out.println("점수 : " + s.score);
-		System.out.println("이름 : " + s.name);
+		System.out.println("Age : " + s.age);
+		System.out.println("Score : " + s.score);
+		System.out.println("Name : " + s.name);
 		//학생한명을 더 만들어서, age, score, name에 각각 어떤 값들을 넣고, 그 값들을 출력해보세요
 		student s2 = new student();
 		s2.age = 20;
 		s2.score = 90;
-		s2.name = "학생2";
+		s2.name = "Student 2";
 		
-		System.out.println("나이 : " + s2.age);
-		System.out.println("점수 : " + s2.score);
-		System.out.println("이름 : " + s2.name);
+		System.out.println("Age : " + s2.age);
+		System.out.println("Score : " + s2.score);
+		System.out.println("Name : " + s2.name);
 	}
 }

@@ -7,15 +7,15 @@ public class ifExample
 		
 		if(score >= 90)
 		{
-			System.out.println("점수가 90보다 큽니다.");
-			System.out.println("등급은 A입니다.");
+			System.out.println("The score is greater than 90");
+			System.out.println("Grade is A");
 		}
 		else
 		{
-			System.out.println("점수가 90보다 작습니다.");
-			System.out.println("등급은 B 입니다.");
+			System.out.println("The score is less than 90");
+			System.out.println("Grade is B");
 		}
 		
-		System.out.println("끝인가요?ㅎㅎ");
+		System.out.println("Is it the end?");
 	}
 }

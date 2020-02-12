@@ -1,15 +1,16 @@
 
 public class PrivateTest 
 {
-	//상태 : 속도, 색상, 주행거리
+	//Status : Speed, Color, Mileage
 	private int speed;
 	private String color;
 	private int mileage;
 
 	//매개변수가 없는 생성자 -> 기본 생성자라고 말함
+	//Default constructor
 	public PrivateTest()
 	{
-		System.out.println("기본 생성자 입니다.");
+		System.out.println("Default constructor");
 		this.speed = 0;
 		this.mileage = 0;
 		this.color = "WHITE";
@@ -17,7 +18,7 @@ public class PrivateTest
 	
 	public PrivateTest(int s, String c, int m)
 	{
-		System.out.println("매개변수 3개 받는 생성자입니다.");
+		System.out.println("Constructor that receives three parameters");
 		this.speed = s;
 		this.mileage = m;
 		this.color = c;
@@ -57,7 +58,7 @@ public class PrivateTest
 //		color = c;
 //	}
 //		
-//	//기능 : 가속, 감속, 현재상태 출력
+//	//Function: Acceleration, Deceleration, Current state (print)
 //	public void speedUp(int s)
 //	{
 //		speed += s;
@@ -68,14 +69,14 @@ public class PrivateTest
 //	}
 //	public void print()
 //	{
-//		System.out.println("현재속도 : " + speed);
-//		System.out.println("색     상 : " + color);
-//		System.out.println("주행거리 : " + mileage);
+//		System.out.println("Current Speed : " + speed);
+//		System.out.println("Color : " + color);
+//		System.out.println("Mileage : " + mileage);
 //	}
 	public String toString()
 	{
-		return "현재속도 : " + speed +
-				"\n색    상 : " + color +
-				"\n주행거리 : " + mileage;
+		return "Current Speed : " + speed +
+				"\nColor : " + color +
+				"\nMileage : " + mileage;
 	}
 }

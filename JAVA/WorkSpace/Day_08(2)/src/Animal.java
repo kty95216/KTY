@@ -5,7 +5,7 @@ public class Animal
 	
 	public void bark()
 	{
-		System.out.println("동물이 짖어요");
+		System.out.println("Animals bark");
 	}
 	
 	public String getName() 

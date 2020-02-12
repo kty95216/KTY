@@ -6,7 +6,7 @@ public class whiletest
 		int i = 0;
 		while (i < 5)
 		{
-			System.out.println("정수 : " + i);
+			System.out.println("Integer : " + i);
 			i++;
 		}
 	}

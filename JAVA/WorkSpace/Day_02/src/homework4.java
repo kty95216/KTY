@@ -11,13 +11,13 @@ public class homework4
 		
 		//사용자한테 점수 입력하라고 안내메세지 출력해주고
 		//사용자가 숫자를 입력하면 준비해둔 score변수에 담읍시다.
-		System.out.println("점수를 입력하세요 : ");
+		System.out.println("Enter your score: ");
 		score = input.nextInt();
 		
 		result = score >= 90 ? "A" : 
 					(score >= 80 ? "B" : 
 						(score >= 70 ? "C" : 
-							(score >= 60 ? "D" : "바보")));
-		System.out.println("당신의 학점은 : " + result + "입니다.");
+							(score >= 60 ? "D" : "fool")));
+		System.out.println("Your grade is " + result);
 	}
 }

@@ -15,8 +15,8 @@ public class Employee
 	public Employee()
 	{
 		// TODO Auto-generated constructor stub
-		System.out.println("객체생성");
-		name = "이름없음";
+		System.out.println("Create object");
+		name = "No Name";
 		salary = 300;
 		count ++;
 	}

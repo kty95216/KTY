@@ -10,10 +10,10 @@ public class Hello
 {
 	public static void main(String[] args)
 	{
-		System.out.println("안녕하세요 자바꿈나무님들:)");
-		System.out.println("만나서 반갑습니다!!!");
-		System.out.println("저는 김태영입니다.");
-		System.out.println("사는곳은 안양입니다.");
-		System.out.println("나이는 25살입니다.");
+		System.out.println("Hello");
+		System.out.println("Nice to meet you");
+		System.out.println("My name is Kim Tae Young");
+		System.out.println("I live in Anyang");
+		System.out.println("I am 24 years old");
 	}
 }

@@ -15,15 +15,15 @@ public class PrivateTest2
 		
 //		abbacha.setSpeed(100);
 //		abbacha.setMileage(20000);
-//		abbacha.setColor("빨강");
+//		abbacha.setColor("Red");
 //		ummacha.setSpeed(200);
 //		ummacha.setMileage(15000);
-//		ummacha.setColor("파랑");
+//		ummacha.setColor("Black");
 //		abbacha.setSpeed(100);
 //		System.out.println(abbacha.getSpeed());
 //		abbacha.setMileage(20000);
 //		System.out.println(abbacha.getMileage());
-//		abbacha.setColor("BLUE");
+//		abbacha.setColor("Blue");
 //		System.out.println(abbacha.getColor());
 //		
 //		abbacha.speed = 100;

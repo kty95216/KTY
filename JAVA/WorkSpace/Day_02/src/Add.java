@@ -1,4 +1,4 @@
-//두수의 합을 계산하는 애플리케이션
+//Application to calculate the sum of two numbers
 /*
 public class Add 
 {
@@ -18,7 +18,7 @@ public class Add
 */
 
 /*
-// 사용자가 입력한 두 개의 숫자를 더해서 출력한다.
+//Print two numbers entered by the user.
 import java.util.Scanner; //Scanner 클래스 포함
 
 public class Add
@@ -33,10 +33,10 @@ public class Add
 		int y; // 두 번째 숫자 저장
 		int sum; // 합을 저장
 		
-		System.out.print("첫번째 숫자를 입력하시오: "); // 입력 안내 출력
+		System.out.print("Enter the first number: "); // 입력 안내 출력
 		x = input.nextInt(); // 사용자로부터 첫 번째 숫자를 읽는다.
 		
-		System.out.print("두번째 숫자를 입력하시오: "); // 입력 안내 출력
+		System.out.print("Enter the second number: "); // 입력 안내 출력
 		y = input.nextInt(); // 사용자로부터 두 번째 숫자를 읽는다.
 		
 		sum = x + y; // 두 개의 숫자를 더한다.
@@ -59,18 +59,18 @@ public class Add
 		int y;
 		int sum;
 		
-		System.out.print("x의 숫자를 입력하시오 : ");
+		System.out.print("Enter the x value: ");
 		x = input.nextInt();
 		
-		System.out.print("y의 숫자를 입력하시오 : ");
+		System.out.print("Enter the y value: ");
 		y = input.nextInt();
 		
 		sum = x + y;
 		
-		System.out.println("결과:");
+		System.out.println("Result:");
 		System.out.printf("x = %d\n",x);
 		System.out.printf("y = %d\n",y);
-		System.out.printf("x + y = %d 입니다.",sum);			
+		System.out.printf("x + y = %d",sum);			
 	}
 }
 */

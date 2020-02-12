@@ -13,7 +13,7 @@ public class Chicken extends Animal
 	}
 
 	
-	public Chicken() {}	//Chicken의 기본생성자
+	public Chicken() {}	//Default constructor of Chicken
 	public Chicken(String name)
 	{
 		this.name = name;
@@ -21,6 +21,6 @@ public class Chicken extends Animal
 	@Override
 	public void bark()
 	{
-		System.out.println(name + "가 짖습니다. 꼬끼오!~!~!~!~!");
+		System.out.println(name + " barks. Coco!~!~!~!~!");
 	}
 }

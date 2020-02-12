@@ -7,22 +7,22 @@ public class SwitchTest
 		int number;
 		
 		Scanner scan = new Scanner(System.in);
-		System.out.print("숫자를 입력 하시오 : ");
+		System.out.print("Enter number: ");
 		number = scan.nextInt();
 		
 		switch(number)
 		{
 		case 0:
-			System.out.println("없음");
+			System.out.println("None");
 			break;
 		case 1:
-			System.out.println("하나");
+			System.out.println("One");
 			break;
 		case 2:
-			System.out.println("둘");
+			System.out.println("Two");
 			break;
 		default:
-			System.out.println("많음");
+			System.out.println("Many");
 			break;
 		}
 	}

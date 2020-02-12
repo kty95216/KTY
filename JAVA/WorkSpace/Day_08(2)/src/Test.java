@@ -12,8 +12,8 @@ public class Test
 		} 
 		catch (ArithmeticException e) 
 		{
-			System.out.println("0으로 못나누나보네ㅜㅜ");
+			System.out.println("I can't divide by zero");
 		}
-		System.out.println("이 구문... 실행 될까요?");
+		System.out.println("This phrase... will it work?");
 	}
 }

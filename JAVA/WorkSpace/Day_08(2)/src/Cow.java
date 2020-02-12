@@ -1,7 +1,7 @@
 
 public class Cow extends Animal
 {
-	public Cow() {}		//Cow의 기본생성자
+	public Cow() {}		//Default constructor of Cow
 	public Cow(String name)
 	{
 		this.name = name;
@@ -9,6 +9,6 @@ public class Cow extends Animal
 	@Override
 	public void bark() 
 	{
-		System.out.println(name + "이가 짖습니다. 음머~~~~");
+		System.out.println(name + " barks. Moo~~~~~");
 	}
 }

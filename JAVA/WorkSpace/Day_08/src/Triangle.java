@@ -7,7 +7,7 @@ public class Triangle extends Shape
 	@Override
 	public void draw() 
 	{
-		System.out.println("세모를 세모세모");
+		System.out.println("Draw a triangle");
 	}
 	
 	public int getBase() 

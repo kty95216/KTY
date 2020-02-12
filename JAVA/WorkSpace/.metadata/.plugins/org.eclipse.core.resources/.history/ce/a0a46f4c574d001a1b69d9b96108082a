@@ -1,0 +1,20 @@
+
+public class StructTest2 
+{
+	public static void draw(String name) 
+	{
+		System.out.println("===============");
+		System.out.println("I drew a picture" + name);
+		System.out.println("===============");
+		System.out.println("I drew a picture" + name);
+		//나중에 다시 사용될 가능성이 높은 코드들에다가 이름을 지어주면 재활용하기 좋음
+	}
+	public static void main(String[] args) 
+	{
+		draw("9 Tae Young");
+		System.out.println("multiplication table");
+		draw("8 Tae Young");
+		System.out.println("lotto");
+		draw("7 Tae Young");
+	}
+}

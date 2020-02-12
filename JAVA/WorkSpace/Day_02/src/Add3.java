@@ -13,18 +13,18 @@ public class Add3
 		double sum = 0;
 		double average = 0;
 		
-		System.out.println("국어 점수 : ");
+		System.out.println("Korean Score: ");
 		korean = input.nextInt();
-		System.out.println("영어 점수 : ");
+		System.out.println("English Score: ");
 		english = input.nextInt();
-		System.out.println("수학 점수 : ");
+		System.out.println("Math Score: ");
 		math = input.nextInt();
-		System.out.println("컴퓨터 점수 : ");
+		System.out.println("Computer Score: ");
 		computer = input.nextInt();
 		
 		sum = korean + english + math + computer;
 		average = sum / 4;
 		
-		System.out.println("평균점수는 : " + average + "점 입니다.");
+		System.out.println("The average score is " + average);
 	}
 }

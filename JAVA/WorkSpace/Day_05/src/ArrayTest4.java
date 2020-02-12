@@ -9,19 +9,19 @@ public class ArrayTest4
 		double total = 0;
 		double avg = 0;
 		
-		System.out.print("학생 수를 입력하세요 : ");
+		System.out.print("Enter the number of students : ");
 		student = scan.nextInt();
 		
 		double[] studentnumber = new double[student];
 		
 		for(int i=0 ; i < student ; i++)
 		{
-			System.out.print("학생" + (i+1) + "의  점수 입력 : ");
+			System.out.print("Enter the score for student" + (i+1) + " : ");
 			studentnumber[i] = scan.nextDouble();
 			total += studentnumber[i];
 		}
 		
 		avg = total / student;
-		System.out.println(student + "명의 평균점수 : " + avg);
+		System.out.println("Average score of " + student + " people : " + avg);
 	}
 }

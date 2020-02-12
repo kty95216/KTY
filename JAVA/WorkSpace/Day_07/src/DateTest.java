@@ -4,24 +4,24 @@ class Date
 	private String month;
 	private int day;
 	
-	public Date()	//기본 생성자
+	public Date()	//Default constructor
 	{
-		month = "1월";
+		month = "January";
 		day = 1;
 		year = 2009;
 	}
 	
-	public Date(int year, String month, int day)	//생성자
+	public Date(int year, String month, int day)	//Constructor
 	{
 		setDate(year, month, day);
 	}
 	
-	public Date(int year)	//생성자
+	public Date(int year)	//Constructor
 	{
-		setDate(year, "1월", 1);
+		setDate(year, "January", 1);
 	}
 	
-	public void setDate(int year, String month, int day)	//this는 현재 객체를 가리킨다.
+	public void setDate(int year, String month, int day)	//"This" points to the current object.
 	{
 		this.month = month;
 		this.day = day;
@@ -32,7 +32,7 @@ public class DateTest
 {
 	public static void main(String[] args)
 	{
-		Date date1 = new Date(2009,"3월",2);	//2009.3.2
+		Date date1 = new Date(2009,"March",2);	//2009.3.2
 		Date date2 = new Date(2010);		//2010.1.1
 		Date date3 = new Date();			//2009.1.1
 	}

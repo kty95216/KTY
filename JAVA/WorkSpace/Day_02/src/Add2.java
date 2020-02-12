@@ -10,13 +10,13 @@ public class Add2
 		int y;
 		int sum;
 		
-		System.out.println("첫번째 값을 입력하시오 : ");
+		System.out.println("Enter the x value: ");
 		x = input.nextInt();
-		System.out.println("두번째 값을 입력하시오 : ");
+		System.out.println("Enter the y value: ");
 		y = input.nextInt();
 		
 		sum = x + y;
 		
-		System.out.println("x + y = " + sum + "입니다.");
+		System.out.println("x + y = " + sum);
 	}
 }

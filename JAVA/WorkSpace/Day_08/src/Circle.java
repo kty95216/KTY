@@ -6,7 +6,7 @@ public class Circle extends Shape
 	@Override
 	public void draw() 
 	{
-		System.out.println("원을 그립니다 똥글똥글");
+		System.out.println("Draw a circle");
 	}
 
 	public int getRadius() 

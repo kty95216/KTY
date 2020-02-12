@@ -9,11 +9,11 @@ public class homework
 //		int num1, num2;
 //		String op;
 //		
-//		System.out.print("정수 1 : ");
+//		System.out.print(Integer 1 : ");
 //		num1 = scan.nextInt();
-//		System.out.print("정수 2 : ");
+//		System.out.print("Integer 2 : ");
 //		num2 = scan.nextInt();
-//		System.out.print("연산방식 선택(+, -, *, / 중) : ");
+//		System.out.print("Select(+, -, *, /) : ");
 //		op = scan.next();
 //		
 //		switch(op) {

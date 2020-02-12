@@ -4,7 +4,7 @@ public class Car
 	private int mileage;
 	private String color;
 	
-	//자동차의 시리얼 번호
+	//Vehicle serial number
 	private int id;
 	
 	//실체화된 Car 객체의 개수를 위한 정적 변수

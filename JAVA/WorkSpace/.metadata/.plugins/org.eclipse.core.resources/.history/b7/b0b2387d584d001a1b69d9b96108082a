@@ -1,0 +1,24 @@
+
+public class Car {
+	//Status : Speed, color, mileage
+	int speed;
+	String color;
+	int mileage;
+	
+	//Function : Acceleration, deceleration, current state (print)
+	public void speedUp(int s)
+	{
+		speed += s;
+	}
+	public void speedDown(int s) 
+	{
+		speed -= s;
+	}
+	public void print()
+	{
+		System.out.println("Current speed : " + speed);
+		System.out.println("Color : " + color);
+		System.out.println("mileage : " + mileage);
+	}
+
+}
